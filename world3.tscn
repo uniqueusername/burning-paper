@@ -1,15 +1,19 @@
-[gd_scene load_steps=32 format=3 uid="uid://0xwiu8ojvx0l"]
+[gd_scene load_steps=36 format=3 uid="uid://cvhg8p4or2270"]
 
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
-[ext_resource type="PackedScene" uid="uid://bdu1wpnvtayol" path="res://levels/world2_walls.tscn" id="3_p2an3"]
+[ext_resource type="PackedScene" uid="uid://d0d0eocnw78y0" path="res://levels/world2_walls.tscn" id="3_p2an3"]
 [ext_resource type="Script" path="res://objects/terminal/terminal_manager.gd" id="4_di0r8"]
 [ext_resource type="Script" path="res://objects/utility/win_particles.gd" id="5_6iefq"]
 [ext_resource type="PackedScene" uid="uid://dq65s848tahmh" path="res://levels/world55.gltf" id="6_jiq8n"]
-[ext_resource type="PackedScene" uid="uid://cliu4q3phxx0f" path="res://assets/tposetaxman.glb" id="7_3e4w5"]
+[ext_resource type="PackedScene" uid="uid://b6wmtme8ljnoy" path="res://assets/tposetaxman.glb" id="7_3e4w5"]
 [ext_resource type="Script" path="res://objects/auditor/auditor.gd" id="8_2hgeu"]
 [ext_resource type="Script" path="res://objects/auditor/vision_cone.gd" id="9_41cbq"]
 [ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_8udyv"]
+[ext_resource type="PackedScene" uid="uid://bmqwxgjesv1o3" path="res://world_assets.tscn" id="11_j7oft"]
+[ext_resource type="PackedScene" uid="uid://bn73vtcbw2mj6" path="res://assets/staticMeshesObjects/BlackServerWall.glb" id="12_po8uc"]
+[ext_resource type="PackedScene" uid="uid://3d2ylkkolfor" path="res://assets/staticMeshesObjects/GreenFilingCabinet.glb" id="13_srfhh"]
+[ext_resource type="PackedScene" uid="uid://b37jk80r3jksp" path="res://assets/staticMeshesObjects/Desk.glb" id="14_rywud"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -270,7 +274,22 @@ projection = 1
 fov = 67.0
 size = 25.324
 
-[node name="world assets" type="Node3D" parent="."]
+[node name="world assets" parent="." instance=ExtResource("11_j7oft")]
+
+[node name="BlackServerWall" parent="world assets" instance=ExtResource("12_po8uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7131, 0.21829, 9.25909)
+
+[node name="BlackServerWall2" parent="world assets" instance=ExtResource("12_po8uc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47941, 0.21829, 9.25909)
+
+[node name="GreenFilingCabinet" parent="world assets" instance=ExtResource("13_srfhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8348, 0.220871, 6.87845)
+
+[node name="GreenFilingCabinet2" parent="world assets" instance=ExtResource("13_srfhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8348, 0.220871, 6.26741)
+
+[node name="Desk" parent="world assets" instance=ExtResource("14_rywud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1192, 0, 4.91252)
 
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
 [connection signal="timeout" from="tposetaxman/start_movement" to="tposetaxman" method="_on_timer_timeout"]
