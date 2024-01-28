@@ -4,17 +4,21 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.01
+#bob variables
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.08
+var t_bob = 0.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var head = $head
 @onready var camera = $head/Camera3D
 
+#no cursor
 func _ready():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		 
+#camera movement
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
@@ -39,5 +43,14 @@ func _physics_process(delta):
 	else:
 		velocity.x = 0.0 
 		velocity.z = 0.0
-
+#head bob 
+	t_bob += delta * velocity.length() * float(is_on_floor())
+	camera.transform.origin = _headbob(t_bob)
 	move_and_slide()
+
+
+func _headbob(time) -> Vector3:
+	var pos = Vector3.ZERO
+	pos.y = sin(time + BOB_FREQ) * BOB_AMP 
+	pos.y = cos(time + BOB_FREQ/2) * BOB_AMP
+	return pos
