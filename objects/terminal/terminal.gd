@@ -1,7 +1,7 @@
 extends CSGBox3D
 
-@export var active_color: Color = Color(0, 255, 0)
-@export var inactive_color: Color = Color(255, 0, 0)
+@export var active_color: Color = Color(0, 1, 0)
+@export var inactive_color: Color = Color(1, 0, 0)
 var interactable: bool = false
 var active: bool = false
 
@@ -9,6 +9,7 @@ func _ready():
 	add_to_group("terminals")
 	material.albedo_color = inactive_color
 	material.emission = inactive_color
+	$OmniLight3D.light_color = inactive_color
 
 func _on_highlight(object: Node):
 	if object == self:
@@ -24,6 +25,7 @@ func _on_activate(object: Node):
 		active = true
 		material.albedo_color = active_color
 		material.emission = active_color
+		$OmniLight3D.light_color = active_color
 
 func connect_interact_signals(player: Node):
 	player.highlight.connect(_on_highlight)
