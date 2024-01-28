@@ -161,9 +161,8 @@ navigation_mesh = SubResource("NavigationMesh_ichjo")
 [node name="world" parent="NavigationRegion3D" instance=ExtResource("7_aws66")]
 
 [node name="tposetaxman" parent="." instance=ExtResource("1_a7ntj")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.24193, 0.215213, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24193, 0.224868, 0)
 script = ExtResource("2_oil8r")
-target_position = Vector3(2, 2, -8.5)
 
 [node name="Area3D" type="Area3D" parent="tposetaxman"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.80885, 0)

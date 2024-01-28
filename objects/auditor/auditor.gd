@@ -31,7 +31,6 @@ func set_movement_target(target_position: Vector3):
 		current_path_point = current_path[0]
 
 func _physics_process(delta):
-
 	if current_path.is_empty():
 		return
 
@@ -46,15 +45,13 @@ func _physics_process(delta):
 			return
 
 	current_path_point = current_path[current_path_index]
+	current_path_point.y = 0.225
 
 	var new_velocity: Vector3 = global_transform.origin.direction_to(current_path_point) * movement_delta
 
 	transform = transform.interpolate_with(transform.looking_at(current_path_point, Vector3(0, 1, 0), true), 0.1)
 
 	global_transform.origin = global_transform.origin.move_toward(global_transform.origin + new_velocity, movement_delta)
-	
-	var print_format = "areas: %d, last: %d"
-	print(print_format % [$Area3D.get_overlapping_bodies().size(), terminals_last_nearby])
 	
 	if $Area3D.get_overlapping_bodies().size() > terminals_last_nearby:
 		at_terminal = true
