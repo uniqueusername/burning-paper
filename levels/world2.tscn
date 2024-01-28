@@ -1,6 +1,5 @@
 [gd_scene load_steps=33 format=3 uid="uid://banvq7n5t3gah"]
 
-[ext_resource type="PackedScene" uid="uid://cliu4q3phxx0f" path="res://assets/tposetaxman.glb" id="1_a7ntj"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_j6y61"]
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="2_bna8q"]
 [ext_resource type="Script" path="res://objects/auditor/auditor.gd" id="2_oil8r"]
@@ -8,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://levels/world2_walls copy.tscn" id="3_h1xlg"]
 [ext_resource type="Script" path="res://objects/utility/win_particles.gd" id="4_wvjsw"]
 [ext_resource type="PackedScene" uid="uid://b2lhlviu62jay" path="res://levels/world2.gltf" id="7_aws66"]
+[ext_resource type="PackedScene" uid="uid://02gwt6tshf8f" path="res://assets/GAMERIGEXPORTANIMS-2.glb" id="7_t240y"]
 [ext_resource type="Script" path="res://objects/auditor/vision_cone.gd" id="9_yyfxx"]
 [ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_fvo1w"]
 
@@ -224,48 +224,79 @@ navigation_mesh = SubResource("NavigationMesh_ichjo")
 [node name="walls" parent="NavigationRegion3D" instance=ExtResource("7_aws66")]
 visible = false
 
-[node name="tposetaxman" parent="." instance=ExtResource("1_a7ntj")]
+[node name="GAMERIGEXPORTANIMS-2" parent="." instance=ExtResource("7_t240y")]
 transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -8.64694, 0.224868, 7.39047)
 script = ExtResource("2_oil8r")
 
-[node name="terminal_scanner" type="Area3D" parent="tposetaxman"]
+[node name="Skeleton3D" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform" index="0"]
+bones/1/position = Vector3(0.422765, -0.793513, 1.05587)
+bones/3/rotation = Quaternion(-0.129045, -0.0099164, -0.245203, 0.960794)
+bones/7/rotation = Quaternion(-0.106243, -0.0095451, -0.194372, 0.975111)
+bones/9/rotation = Quaternion(-0.109259, -0.0149504, -0.244899, 0.963257)
+bones/17/position = Vector3(-0.10427, 0.0504348, 0.118682)
+bones/17/rotation = Quaternion(-0.706676, 0.706676, 0.0246696, 0.0246696)
+bones/19/rotation = Quaternion(1.09422e-07, 2.9789e-07, -0.110903, 0.993831)
+bones/20/position = Vector3(0.0166445, -0.00666295, 1.0421)
+bones/20/rotation = Quaternion(9.7655e-11, -3.30027e-09, -2.89502e-10, 1)
+bones/22/rotation = Quaternion(0.512468, -0.405979, 0.177014, 0.735679)
+bones/23/rotation = Quaternion(-6.29403e-07, -8.09439e-08, 0.62868, 0.777664)
+bones/24/rotation = Quaternion(0.774178, -0.0221146, 0.0761401, 0.627982)
+bones/25/rotation = Quaternion(0.355484, 0.0466474, 0.0641122, 0.931313)
+bones/26/rotation = Quaternion(0.0897702, 0.0535538, 0.0584668, 0.992802)
+bones/27/rotation = Quaternion(0.125067, 0.045764, 0.0647459, 0.988975)
+bones/28/position = Vector3(-0.128422, -0.0156206, -0.0317957)
+bones/28/rotation = Quaternion(0.476829, 0.522144, 0.476829, 0.522144)
+bones/29/rotation = Quaternion(-0.634484, -0.0285944, -0.24051, 0.734008)
+bones/30/rotation = Quaternion(0.581751, 0.000318834, -0.460479, 0.670467)
+bones/31/position = Vector3(0.128422, -0.0156204, -0.0317959)
+bones/32/rotation = Quaternion(-0.170781, -0.330163, -0.0240461, 0.928035)
+bones/33/rotation = Quaternion(0.532229, -0.000349152, 0.421281, 0.73434)
+bones/35/rotation = Quaternion(0.543355, 0.40534, -0.187298, 0.710904)
+bones/36/rotation = Quaternion(-6.44601e-07, 7.29485e-08, -0.629662, 0.776869)
+bones/37/position = Vector3(0.10427, 0.0504348, 0.118682)
+bones/37/rotation = Quaternion(0.706676, 0.706676, 0.0246696, -0.0246696)
+bones/39/rotation = Quaternion(1.1143e-07, -3.01227e-07, 0.110903, 0.993831)
+bones/40/position = Vector3(-0.422765, -0.793513, 1.05587)
+
+[node name="terminal_scanner" type="Area3D" parent="GAMERIGEXPORTANIMS-2"]
+transform = Transform3D(1, 0, -1.04293e-08, 0, 1, 0, 1.32574e-08, 0, 1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tposetaxman/terminal_scanner"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GAMERIGEXPORTANIMS-2/terminal_scanner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.629272, 1.31732, 5.10071)
 shape = SubResource("BoxShape3D_676kj")
 
-[node name="Area3D" type="Area3D" parent="tposetaxman"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.80885, 0)
+[node name="Area3D" type="Area3D" parent="GAMERIGEXPORTANIMS-2"]
+transform = Transform3D(2, 0, -2.08587e-08, 0, 2, 0, 2.65149e-08, 0, 2, 0, 1.80885, 0)
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tposetaxman/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GAMERIGEXPORTANIMS-2/Area3D"]
 shape = SubResource("BoxShape3D_ycf0h")
 
-[node name="vision_cone" type="RayCast3D" parent="tposetaxman"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
+[node name="vision_cone" type="RayCast3D" parent="GAMERIGEXPORTANIMS-2"]
+transform = Transform3D(1, 0, -1.04293e-08, 0, 1, 0, 1.32574e-08, 0, 1, 0, 0.5, 0)
 target_position = Vector3(2.08165e-12, 2.08165e-12, 100)
 collision_mask = 11
 collide_with_areas = true
 script = ExtResource("9_yyfxx")
 debug_rays_visible = true
 
-[node name="RayCast3D" type="RayCast3D" parent="tposetaxman/vision_cone"]
+[node name="RayCast3D" type="RayCast3D" parent="GAMERIGEXPORTANIMS-2/vision_cone"]
 visible = false
 collision_mask = 0
 
-[node name="RayCast3D2" type="RayCast3D" parent="tposetaxman/vision_cone"]
+[node name="RayCast3D2" type="RayCast3D" parent="GAMERIGEXPORTANIMS-2/vision_cone"]
 visible = false
 collision_mask = 0
 
-[node name="start_movement" type="Timer" parent="tposetaxman"]
+[node name="start_movement" type="Timer" parent="GAMERIGEXPORTANIMS-2"]
 wait_time = 0.1
 one_shot = true
 autostart = true
 
-[node name="hack_timer" type="Timer" parent="tposetaxman"]
+[node name="hack_timer" type="Timer" parent="GAMERIGEXPORTANIMS-2"]
 wait_time = 3.0
 one_shot = true
 script = ExtResource("10_fvo1w")
@@ -279,9 +310,10 @@ fov = 67.0
 size = 25.324
 
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
-[connection signal="end_tracking" from="tposetaxman" to="tposetaxman/vision_cone" method="_on_end_tracking"]
-[connection signal="retarget" from="tposetaxman/vision_cone" to="tposetaxman" method="_on_vision_cone_retarget"]
-[connection signal="timeout" from="tposetaxman/start_movement" to="tposetaxman" method="_on_timer_timeout"]
-[connection signal="timeout" from="tposetaxman/hack_timer" to="tposetaxman" method="_on_hack_timer_timeout"]
+[connection signal="end_tracking" from="GAMERIGEXPORTANIMS-2" to="GAMERIGEXPORTANIMS-2/vision_cone" method="_on_end_tracking"]
+[connection signal="retarget" from="GAMERIGEXPORTANIMS-2/vision_cone" to="GAMERIGEXPORTANIMS-2" method="_on_vision_cone_retarget"]
+[connection signal="timeout" from="GAMERIGEXPORTANIMS-2/start_movement" to="GAMERIGEXPORTANIMS-2" method="_on_timer_timeout"]
+[connection signal="timeout" from="GAMERIGEXPORTANIMS-2/hack_timer" to="GAMERIGEXPORTANIMS-2" method="_on_hack_timer_timeout"]
 
 [editable path="player"]
+[editable path="GAMERIGEXPORTANIMS-2"]
