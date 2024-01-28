@@ -62,7 +62,8 @@ func _physics_process(delta):
 	transform = transform.interpolate_with(transform.looking_at(current_path_point, Vector3(0, 1, 0), true), 0.1)
 	global_transform.origin = global_transform.origin.move_toward(global_transform.origin + new_velocity, movement_delta)
 	
-	if $Area3D.get_overlapping_bodies().size() > terminals_last_nearby:
+	var bodies = $Area3D.get_overlapping_bodies()
+	if bodies.size() > terminals_last_nearby:
 		at_terminal = true
 		
 	if at_terminal:
