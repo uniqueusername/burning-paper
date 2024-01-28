@@ -1,12 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://cvhg8p4or2270"]
+[gd_scene load_steps=32 format=3 uid="uid://0xwiu8ojvx0l"]
 
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
-[ext_resource type="PackedScene" uid="uid://d0d0eocnw78y0" path="res://levels/world2_walls.tscn" id="3_p2an3"]
+[ext_resource type="PackedScene" uid="uid://bdu1wpnvtayol" path="res://levels/world2_walls.tscn" id="3_p2an3"]
 [ext_resource type="Script" path="res://objects/terminal/terminal_manager.gd" id="4_di0r8"]
 [ext_resource type="Script" path="res://objects/utility/win_particles.gd" id="5_6iefq"]
 [ext_resource type="PackedScene" uid="uid://dq65s848tahmh" path="res://levels/world55.gltf" id="6_jiq8n"]
-[ext_resource type="PackedScene" uid="uid://b6wmtme8ljnoy" path="res://assets/tposetaxman.glb" id="7_3e4w5"]
+[ext_resource type="PackedScene" uid="uid://cliu4q3phxx0f" path="res://assets/tposetaxman.glb" id="7_3e4w5"]
 [ext_resource type="Script" path="res://objects/auditor/auditor.gd" id="8_2hgeu"]
 [ext_resource type="Script" path="res://objects/auditor/vision_cone.gd" id="9_41cbq"]
 [ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_8udyv"]
@@ -191,6 +191,9 @@ shape = SubResource("BoxShape3D_54fsh")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02862, 1, 8.58457)
 collision_layer = 2
+
+[node name="Camera3D" parent="player/head" index="0"]
+current = false
 
 [node name="RayCast3D" parent="player/head/Camera3D" index="0"]
 target_position = Vector3(2.08165e-12, 2.08165e-12, -1)
