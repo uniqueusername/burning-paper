@@ -1,21 +1,31 @@
 extends CSGBox3D
 
-@export var active_color : Color = Color(0, 255, 0)
-@export var inactive_color : Color = Color(255, 0, 0)
-var interactable : bool = false
-var active : bool = false
+@export var active_color: Color = Color(0, 255, 0)
+@export var inactive_color: Color = Color(255, 0, 0)
+var interactable: bool = false
+var active: bool = false
 
 func _ready():
 	add_to_group("terminals")
+	material.albedo_color = inactive_color
+	material.emission = inactive_color
 
-func _on_highlight():
-	interactable = true
-	$outline.visible = interactable
+func _on_highlight(object: Node):
+	if object == self:
+		interactable = true
+		$outline.visible = interactable
 
 func _on_unhighlight():
 	interactable = false
 	$outline.visible = interactable
+	
+func _on_activate(object: Node):
+	if object == self and interactable:
+		active = true
+		material.albedo_color = active_color
+		material.emission = active_color
 
 func connect_interact_signals(player: Node):
 	player.highlight.connect(_on_highlight)
 	player.unhighlight.connect(_on_unhighlight)
+	player.activate.connect(_on_activate)

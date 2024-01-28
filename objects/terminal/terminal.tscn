@@ -1,12 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2b0kp0wya7bg"]
 
+[ext_resource type="Material" uid="uid://c2wq6xorue6xj" path="res://objects/terminal/terminal_material.tres" id="1_ppk21"]
 [ext_resource type="Script" path="res://objects/terminal/terminal.gd" id="1_q4vcm"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7e64"]
-albedo_color = Color(1, 0, 0, 1)
-emission_enabled = true
-emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 4.54
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xb21c"]
 shading_mode = 0
@@ -31,7 +26,7 @@ use_collision = true
 collision_layer = 4
 collision_mask = 0
 size = Vector3(0.3, 0.3, 0.3)
-material = SubResource("StandardMaterial3D_p7e64")
+material = ExtResource("1_ppk21")
 script = ExtResource("1_q4vcm")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
