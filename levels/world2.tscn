@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://banvq7n5t3gah"]
+[gd_scene load_steps=32 format=3 uid="uid://banvq7n5t3gah"]
 
 [ext_resource type="PackedScene" uid="uid://cliu4q3phxx0f" path="res://assets/tposetaxman.glb" id="1_a7ntj"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_j6y61"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://objects/utility/win_particles.gd" id="4_wvjsw"]
 [ext_resource type="PackedScene" uid="uid://bdu1wpnvtayol" path="res://levels/world2_walls.tscn" id="5_c7bfu"]
 [ext_resource type="PackedScene" uid="uid://b2lhlviu62jay" path="res://levels/world2.gltf" id="7_aws66"]
+[ext_resource type="Script" path="res://objects/auditor/vision_cone.gd" id="9_yyfxx"]
+[ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_fvo1w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -46,12 +48,18 @@ emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fx50m"]
+size = Vector3(1.6, 3, 3)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xlgp"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5k2c"]
+size = Vector3(1.176, 3, 4.034)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w4sh"]
 resource_local_to_scene = true
@@ -60,6 +68,9 @@ emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dx4gq"]
+size = Vector3(1.877, 3, 3.766)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cn21e"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0, 0, 1)
@@ -67,12 +78,18 @@ emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6lnd"]
+size = Vector3(3.515, 3, 4.394)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gwd1"]
 resource_local_to_scene = true
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_54fsh"]
+size = Vector3(3.005, 3, 2.587)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yfrso"]
 direction = Vector3(2.08165e-12, 10, 2.08165e-12)
@@ -110,21 +127,65 @@ transform = Transform3D(1, 1.05879e-22, 0, 9.63259e-34, 1, 0, 0, 0, 1, 0, 0, 0)
 transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -8.86834, 1.29949, -4.55731)
 material = SubResource("StandardMaterial3D_47g1u")
 
+[node name="Area3D2" type="Area3D" parent="terminals/terminal"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal/Area3D2"]
+transform = Transform3D(1, -9.40864e-20, 2.00704e-38, 9.40864e-20, 1, 0, -2.00704e-38, 0, 1, 4.26895, 0, 2.42454)
+shape = SubResource("BoxShape3D_fx50m")
+
 [node name="terminal2" parent="terminals" instance=ExtResource("2_bna8q")]
 transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -4.83891, 1.29949, 5.7738)
 material = SubResource("StandardMaterial3D_0xlgp")
+
+[node name="Area3D2" type="Area3D" parent="terminals/terminal2"]
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal2/Area3D2"]
+transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, -4.60626, 0, -6.24183)
+shape = SubResource("BoxShape3D_b5k2c")
 
 [node name="terminal3" parent="terminals" instance=ExtResource("2_bna8q")]
 transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 1.85142, 1.29949, -4.60823)
 material = SubResource("StandardMaterial3D_6w4sh")
 
+[node name="Area3D2" type="Area3D" parent="terminals/terminal3"]
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal3/Area3D2"]
+transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, 6.2443, 0, 3.00902)
+shape = SubResource("BoxShape3D_dx4gq")
+
 [node name="terminal4" parent="terminals" instance=ExtResource("2_bna8q")]
 transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 7.48472, 1.29949, 7.05238)
 material = SubResource("StandardMaterial3D_cn21e")
 
+[node name="Area3D2" type="Area3D" parent="terminals/terminal4"]
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal4/Area3D2"]
+transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, -6.89741, 0, -0.765734)
+shape = SubResource("BoxShape3D_x6lnd")
+
 [node name="terminal5" parent="terminals" instance=ExtResource("2_bna8q")]
 transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -1.35548, 1.29949, -8.14715)
 material = SubResource("StandardMaterial3D_6gwd1")
+
+[node name="Area3D2" type="Area3D" parent="terminals/terminal5"]
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal5/Area3D2"]
+transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, 0.0158814, 0, -0.131785)
+shape = SubResource("BoxShape3D_54fsh")
 
 [node name="player" parent="." instance=ExtResource("1_j6y61")]
 unique_name_in_owner = true
@@ -177,6 +238,29 @@ wait_time = 0.1
 one_shot = true
 autostart = true
 
+[node name="vision_cone" type="RayCast3D" parent="tposetaxman"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00580788, 0, 0.00580764)
+target_position = Vector3(2.08165e-12, 2.08165e-12, 10)
+collision_mask = 8
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("9_yyfxx")
+debug_rays_visible = true
+
+[node name="RayCast3D" type="RayCast3D" parent="tposetaxman/vision_cone"]
+visible = false
+collision_mask = 0
+
+[node name="RayCast3D2" type="RayCast3D" parent="tposetaxman/vision_cone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23612, -0.224868, -0.00580764)
+visible = false
+collision_mask = 0
+
+[node name="hack_timer" type="Timer" parent="tposetaxman"]
+wait_time = 3.0
+one_shot = true
+script = ExtResource("10_fvo1w")
+
 [node name="top_view_cam" type="Camera3D" parent="."]
 transform = Transform3D(0.999934, 0.0115004, -0.000652636, 0, 0.0566579, 0.998394, 0.0115189, -0.998327, 0.0566541, -0.592796, 21.5331, 0.127188)
 environment = SubResource("Environment_ip753")
@@ -186,5 +270,7 @@ size = 25.324
 
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
 [connection signal="timeout" from="tposetaxman/start_movement" to="tposetaxman" method="_on_timer_timeout"]
+[connection signal="retarget" from="tposetaxman/vision_cone" to="tposetaxman" method="_on_vision_cone_retarget"]
+[connection signal="timeout" from="tposetaxman/hack_timer" to="tposetaxman" method="_on_hack_timer_timeout"]
 
 [editable path="player"]

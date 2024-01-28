@@ -4,6 +4,7 @@ extends Node3D
 @onready var terminals = get_tree().get_nodes_in_group("terminals")
 
 @export var target_position: Vector3 = Vector3(0, 0, 0)
+@export var floor_offset: float = 0.225
 var at_terminal = false
 var terminals_last_nearby = 0
 
@@ -45,7 +46,7 @@ func _physics_process(delta):
 			return
 
 	current_path_point = current_path[current_path_index]
-	current_path_point.y = 0.225
+	current_path_point.y = floor_offset
 
 	var new_velocity: Vector3 = global_transform.origin.direction_to(current_path_point) * movement_delta
 
@@ -57,8 +58,7 @@ func _physics_process(delta):
 		at_terminal = true
 		
 	if at_terminal:
-		set_new_path()
-		at_terminal = false
+		$hack_timer.start()
 		
 	terminals_last_nearby = $Area3D.get_overlapping_bodies().size()
 
@@ -73,3 +73,10 @@ func select_random_terminal():
 
 func _on_timer_timeout():
 	set_new_path()
+
+func _on_vision_cone_retarget(target_location: Vector3):
+	set_movement_target(target_location)
+	
+func _on_hack_timer_timeout():
+	set_new_path()
+	at_terminal = false

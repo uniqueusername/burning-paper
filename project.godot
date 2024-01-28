@@ -80,6 +80,7 @@ start={
 3d_physics/layer_1="walls"
 3d_physics/layer_2="player"
 3d_physics/layer_3="terminal"
+3d_physics/layer_4="terminal_area"
 
 [rendering]
 
