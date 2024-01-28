@@ -44,6 +44,7 @@ material = SubResource("StandardMaterial3D_e776h")
 collision_layer = 2
 
 [node name="head" parent="CharacterBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.602865, 0)
 visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
