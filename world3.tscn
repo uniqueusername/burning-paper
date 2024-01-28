@@ -1,15 +1,15 @@
-[gd_scene load_steps=33 format=3 uid="uid://banvq7n5t3gah"]
+[gd_scene load_steps=32 format=3 uid="uid://cvhg8p4or2270"]
 
-[ext_resource type="PackedScene" uid="uid://b6wmtme8ljnoy" path="res://assets/tposetaxman.glb" id="1_a7ntj"]
-[ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_j6y61"]
-[ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="2_bna8q"]
-[ext_resource type="Script" path="res://objects/auditor/auditor.gd" id="2_oil8r"]
-[ext_resource type="Script" path="res://objects/terminal/terminal_manager.gd" id="3_ahj14"]
-[ext_resource type="Script" path="res://objects/utility/win_particles.gd" id="4_wvjsw"]
-[ext_resource type="PackedScene" uid="uid://d0d0eocnw78y0" path="res://levels/world2_walls.tscn" id="5_c7bfu"]
-[ext_resource type="PackedScene" uid="uid://b2lhlviu62jay" path="res://levels/world2.gltf" id="7_aws66"]
-[ext_resource type="Script" path="res://objects/auditor/vision_cone.gd" id="9_yyfxx"]
-[ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_fvo1w"]
+[ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
+[ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
+[ext_resource type="PackedScene" uid="uid://d0d0eocnw78y0" path="res://levels/world2_walls.tscn" id="3_p2an3"]
+[ext_resource type="Script" path="res://objects/terminal/terminal_manager.gd" id="4_di0r8"]
+[ext_resource type="Script" path="res://objects/utility/win_particles.gd" id="5_6iefq"]
+[ext_resource type="PackedScene" uid="uid://dq65s848tahmh" path="res://levels/world55.gltf" id="6_jiq8n"]
+[ext_resource type="PackedScene" uid="uid://b6wmtme8ljnoy" path="res://assets/tposetaxman.glb" id="7_3e4w5"]
+[ext_resource type="Script" path="res://objects/auditor/auditor.gd" id="8_2hgeu"]
+[ext_resource type="Script" path="res://objects/auditor/vision_cone.gd" id="9_41cbq"]
+[ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_8udyv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -48,7 +48,7 @@ emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fx50m"]
-size = Vector3(3.05867, 3, 3)
+size = Vector3(1.6, 3, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xlgp"]
 resource_local_to_scene = true
@@ -103,9 +103,6 @@ vertices = PackedVector3Array(-7.85129, 0.47667, 3.75225, -7.10129, 0.47667, 3.5
 polygons = [PackedInt32Array(2, 1, 3), PackedInt32Array(3, 1, 0), PackedInt32Array(6, 5, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(13, 12, 11), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(23, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(27, 26, 28), PackedInt32Array(28, 26, 29), PackedInt32Array(32, 31, 30), PackedInt32Array(36, 35, 33), PackedInt32Array(33, 35, 34), PackedInt32Array(39, 38, 37), PackedInt32Array(42, 41, 43), PackedInt32Array(43, 41, 40), PackedInt32Array(43, 40, 44), PackedInt32Array(46, 45, 47), PackedInt32Array(47, 45, 48), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(58, 57, 59), PackedInt32Array(59, 57, 60), PackedInt32Array(62, 61, 63), PackedInt32Array(63, 61, 64), PackedInt32Array(67, 66, 65), PackedInt32Array(70, 69, 68), PackedInt32Array(72, 71, 73), PackedInt32Array(73, 71, 74), PackedInt32Array(76, 75, 77), PackedInt32Array(77, 75, 78), PackedInt32Array(80, 79, 81), PackedInt32Array(81, 79, 82), PackedInt32Array(84, 83, 85), PackedInt32Array(85, 83, 86), PackedInt32Array(86, 83, 87), PackedInt32Array(90, 89, 88), PackedInt32Array(93, 92, 91), PackedInt32Array(96, 95, 94), PackedInt32Array(98, 97, 99), PackedInt32Array(99, 97, 100), PackedInt32Array(104, 103, 101), PackedInt32Array(101, 103, 102), PackedInt32Array(106, 105, 107), PackedInt32Array(107, 105, 108), PackedInt32Array(110, 109, 111), PackedInt32Array(111, 109, 112), PackedInt32Array(114, 113, 115), PackedInt32Array(115, 113, 116), PackedInt32Array(118, 117, 119), PackedInt32Array(119, 117, 120), PackedInt32Array(122, 121, 123), PackedInt32Array(123, 121, 124)]
 agent_radius = 0.1
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_676kj"]
-size = Vector3(22.2327, 3.63464, 10.0232)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycf0h"]
 size = Vector3(2, 1.5, 2)
 
@@ -125,20 +122,21 @@ material = SubResource("StandardMaterial3D_e776h")
 [node name="terminals" type="Node3D" parent="."]
 transform = Transform3D(1, 1.05879e-22, 0, 9.63259e-34, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="terminal" parent="terminals" instance=ExtResource("2_bna8q")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -8.86834, 1.29949, -4.55731)
+[node name="terminal" parent="terminals" instance=ExtResource("1_npg4p")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -9.34067, 1.29949, -8.80825)
 material = SubResource("StandardMaterial3D_47g1u")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal"]
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 0, 0, 1, -2.4343, 0, -1.96197)
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, 4.99829, 0, 2.42454)
+transform = Transform3D(1, -9.40864e-20, 2.00704e-38, 9.40864e-20, 1, 0, -2.00704e-38, 0, 1, 4.26895, 0, 2.42454)
 shape = SubResource("BoxShape3D_fx50m")
 
-[node name="terminal2" parent="terminals" instance=ExtResource("2_bna8q")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -4.83891, 1.29949, 5.7738)
+[node name="terminal2" parent="terminals" instance=ExtResource("1_npg4p")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -1.60529, 1.29949, -1.2021)
 material = SubResource("StandardMaterial3D_0xlgp")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal2"]
@@ -147,11 +145,11 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal2/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, -4.60626, 0, -6.24183)
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, -6.00799, 0, 4.45079)
 shape = SubResource("BoxShape3D_b5k2c")
 
-[node name="terminal3" parent="terminals" instance=ExtResource("2_bna8q")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 1.85142, 1.29949, -4.60823)
+[node name="terminal3" parent="terminals" instance=ExtResource("1_npg4p")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 2.43275, 1.29949, -8.82283)
 material = SubResource("StandardMaterial3D_6w4sh")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal3"]
@@ -160,11 +158,11 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal3/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 6.2443, 0, 3.00902)
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 7.12033, 0, 6.52892)
 shape = SubResource("BoxShape3D_dx4gq")
 
-[node name="terminal4" parent="terminals" instance=ExtResource("2_bna8q")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 7.48472, 1.29949, 7.05238)
+[node name="terminal4" parent="terminals" instance=ExtResource("1_npg4p")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 9.52416, 1.29949, 8.62118)
 material = SubResource("StandardMaterial3D_cn21e")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal4"]
@@ -173,29 +171,26 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal4/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, -6.89741, 0, -0.765734)
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, -0.319063, 0, -5.08711)
 shape = SubResource("BoxShape3D_x6lnd")
 
-[node name="terminal5" parent="terminals" instance=ExtResource("2_bna8q")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -1.35548, 1.29949, -8.14715)
+[node name="terminal5" parent="terminals" instance=ExtResource("1_npg4p")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 6.09275, 1.29949, 1.55371)
 material = SubResource("StandardMaterial3D_6gwd1")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal5"]
-transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 0, 0, 1, -1.63498, 0, -3.52428)
 collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal5/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 0.0158814, 0, -0.131785)
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 0.416502, 0, -0.131785)
 shape = SubResource("BoxShape3D_54fsh")
 
-[node name="player" parent="." instance=ExtResource("1_j6y61")]
+[node name="player" parent="." instance=ExtResource("2_jdb5k")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11943, 1, 7.11763)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02862, 1, 8.58457)
 collision_layer = 2
-
-[node name="head" parent="player" index="3"]
-visible = false
 
 [node name="RayCast3D" parent="player/head/Camera3D" index="0"]
 target_position = Vector3(2.08165e-12, 2.08165e-12, -1)
@@ -205,34 +200,28 @@ transform = Transform3D(0.690971, 0.647584, -0.321238, 1.64799e-16, 0.444385, 0.
 light_energy = 0.111
 shadow_enabled = true
 
-[node name="walls" parent="." instance=ExtResource("5_c7bfu")]
+[node name="walls" parent="." instance=ExtResource("3_p2an3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.118993, 0, 0)
 
 [node name="terminal_manager" type="Node3D" parent="."]
-script = ExtResource("3_ahj14")
+script = ExtResource("4_di0r8")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.706011, 0)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_yfrso")
 draw_pass_1 = SubResource("BoxMesh_r1tij")
-script = ExtResource("4_wvjsw")
+script = ExtResource("5_6iefq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ichjo")
 
-[node name="walls" parent="NavigationRegion3D" instance=ExtResource("7_aws66")]
+[node name="walls" parent="NavigationRegion3D" instance=ExtResource("6_jiq8n")]
+visible = false
 
-[node name="tposetaxman" parent="." instance=ExtResource("1_a7ntj")]
-transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -8.64694, 0.224868, 7.39047)
-script = ExtResource("2_oil8r")
-
-[node name="terminal_scanner" type="Area3D" parent="tposetaxman"]
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tposetaxman/terminal_scanner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.629272, 1.31732, 5.10071)
-shape = SubResource("BoxShape3D_676kj")
+[node name="tposetaxman" parent="." instance=ExtResource("7_3e4w5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24193, 0.224868, 0)
+script = ExtResource("8_2hgeu")
 
 [node name="Area3D" type="Area3D" parent="tposetaxman"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.80885, 0)
@@ -242,12 +231,18 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tposetaxman/Area3D"]
 shape = SubResource("BoxShape3D_ycf0h")
 
+[node name="start_movement" type="Timer" parent="tposetaxman"]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
 [node name="vision_cone" type="RayCast3D" parent="tposetaxman"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
-target_position = Vector3(2.08165e-12, 2.08165e-12, 100)
-collision_mask = 11
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00580788, 0, 0.00580764)
+target_position = Vector3(2.08165e-12, 2.08165e-12, 10)
+collision_mask = 8
 collide_with_areas = true
-script = ExtResource("9_yyfxx")
+collide_with_bodies = false
+script = ExtResource("9_41cbq")
 debug_rays_visible = true
 
 [node name="RayCast3D" type="RayCast3D" parent="tposetaxman/vision_cone"]
@@ -255,31 +250,25 @@ visible = false
 collision_mask = 0
 
 [node name="RayCast3D2" type="RayCast3D" parent="tposetaxman/vision_cone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23612, -0.224868, -0.00580764)
 visible = false
 collision_mask = 0
-
-[node name="start_movement" type="Timer" parent="tposetaxman"]
-wait_time = 0.1
-one_shot = true
-autostart = true
 
 [node name="hack_timer" type="Timer" parent="tposetaxman"]
 wait_time = 3.0
 one_shot = true
-script = ExtResource("10_fvo1w")
+script = ExtResource("10_8udyv")
 
 [node name="top_view_cam" type="Camera3D" parent="."]
 transform = Transform3D(0.999934, 0.0115004, -0.000652636, 0, 0.0566579, 0.998394, 0.0115189, -0.998327, 0.0566541, -0.592796, 21.5331, 0.127188)
 environment = SubResource("Environment_ip753")
 projection = 1
-current = true
 fov = 67.0
 size = 25.324
 
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
-[connection signal="end_tracking" from="tposetaxman" to="tposetaxman/vision_cone" method="_on_end_tracking"]
-[connection signal="retarget" from="tposetaxman/vision_cone" to="tposetaxman" method="_on_vision_cone_retarget"]
 [connection signal="timeout" from="tposetaxman/start_movement" to="tposetaxman" method="_on_timer_timeout"]
+[connection signal="retarget" from="tposetaxman/vision_cone" to="tposetaxman" method="_on_vision_cone_retarget"]
 [connection signal="timeout" from="tposetaxman/hack_timer" to="tposetaxman" method="_on_hack_timer_timeout"]
 
 [editable path="player"]
