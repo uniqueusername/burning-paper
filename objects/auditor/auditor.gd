@@ -78,5 +78,8 @@ func _on_vision_cone_retarget(target_location: Vector3):
 	set_movement_target(target_location)
 	
 func _on_hack_timer_timeout():
+	for body in $Area3D.get_overlapping_bodies():
+		if terminals.has(body):
+			body.deactivate()
 	set_new_path()
 	at_terminal = false
