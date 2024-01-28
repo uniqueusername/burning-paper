@@ -51,9 +51,6 @@ visible = false
 [node name="RayCast3D" parent="player/head/Camera3D" index="0"]
 target_position = Vector3(2.08165e-12, 2.08165e-12, -1)
 
-[node name="interact" parent="player" index="3"]
-interact_distance = 1.0
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.690971, 0.647584, -0.321238, 1.64799e-16, 0.444385, 0.895836, 0.722883, -0.618996, 0.307057, 0.680355, 4.41086, -4.76837e-07)
 light_energy = 0.111

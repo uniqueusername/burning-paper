@@ -7,7 +7,7 @@ signal unhighlight
 
 func _ready():
 	%RayCast3D.target_position = Vector3(0, 0, -interact_distance)
-	get_tree().call_group("terminals", "connect_highlight_signals", self)
+	get_tree().call_group("terminals", "connect_interact_signals", self)
 
 func _physics_process(delta):
 	if %RayCast3D.is_colliding(): 
