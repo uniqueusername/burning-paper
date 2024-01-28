@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+signal die
 
 const WALK = 3.0
 const SPRINT = 10.0
@@ -74,3 +75,4 @@ func _headbob(time) -> Vector3:
 func kill(location):
 	dead = true
 	camera.look_at(location + Vector3(0, 1, 0))
+	die.emit()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://0xwiu8ojvx0l"]
+[gd_scene load_steps=96 format=3 uid="uid://0xwiu8ojvx0l"]
 
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
@@ -12,10 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://bhb5e863sxlbc" path="res://assets/GAMERIGEXPORTANIMS-2_theoffice.png" id="9_dnrbx"]
 [ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_8udyv"]
 [ext_resource type="Animation" uid="uid://bigpossu263a1" path="res://assets/walk_animation.res" id="10_gc7v4"]
-[ext_resource type="PackedScene" uid="uid://bmqwxgjesv1o3" path="res://world_assets.tscn" id="11_j7oft"]
+[ext_resource type="PackedScene" path="res://world_assets.tscn" id="11_j7oft"]
 [ext_resource type="PackedScene" uid="uid://bn73vtcbw2mj6" path="res://assets/staticMeshesObjects/BlackServerWall.glb" id="12_po8uc"]
 [ext_resource type="PackedScene" uid="uid://3d2ylkkolfor" path="res://assets/staticMeshesObjects/GreenFilingCabinet.glb" id="13_srfhh"]
 [ext_resource type="PackedScene" uid="uid://b37jk80r3jksp" path="res://assets/staticMeshesObjects/Desk.glb" id="14_rywud"]
+
+[sub_resource type="GDScript" id="GDScript_8d8bx"]
+script/source = "extends CenterContainer
+
+func _on_player_die():
+	visible = true
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -6752,6 +6759,23 @@ size = Vector3(2, 3, 2)
 
 [node name="world" type="Node3D"]
 
+[node name="death" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_8d8bx")
+
+[node name="Label" type="Label" parent="death"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 108
+text = "you died
+repent...
+(R to restart)"
+horizontal_alignment = 1
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oofkt")
 
@@ -7132,6 +7156,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8348, 0.220871, 6.26741)
 [node name="Desk" parent="world assets" instance=ExtResource("14_rywud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1192, 0, 4.91252)
 
+[connection signal="die" from="player" to="death" method="_on_player_die"]
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
 [connection signal="end_tracking" from="enemy_guy" to="enemy_guy/vision_cone" method="_on_end_tracking"]
 [connection signal="retarget" from="enemy_guy/vision_cone" to="enemy_guy" method="_on_vision_cone_retarget"]
