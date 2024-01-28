@@ -24,6 +24,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_energy = 0.1
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -34,7 +35,7 @@ use_collision = true
 size = Vector3(20.1669, 0.001, 18.901)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99839, 0.0141614, 1.49139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.998, 1, 1.491)
 disable_mode = 2
 script = ExtResource("1_3ic82")
 
@@ -42,7 +43,6 @@ script = ExtResource("1_3ic82")
 mesh = SubResource("CapsuleMesh_xjxf4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815888, 0)
 shape = SubResource("ConvexPolygonShape3D_6fiin")
 
 [node name="head" type="Node3D" parent="CharacterBody3D"]
