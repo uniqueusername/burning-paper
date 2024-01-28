@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://banvq7n5t3gah"]
+[gd_scene load_steps=12 format=3 uid="uid://banvq7n5t3gah"]
 
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_j6y61"]
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="2_bna8q"]
+[ext_resource type="Script" path="res://objects/terminal/terminal_manager.gd" id="3_ahj14"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -53,12 +54,27 @@ use_collision = true
 size = Vector3(20.1669, 0.001, 18.901)
 material = SubResource("StandardMaterial3D_e776h")
 
-[node name="terminal" parent="." instance=ExtResource("2_bna8q")]
+[node name="terminals" type="Node3D" parent="."]
+transform = Transform3D(1, 1.05879e-22, 0, 9.63259e-34, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="terminal" parent="terminals" instance=ExtResource("2_bna8q")]
 transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 3.37785, 1.29949, 0)
 material = SubResource("StandardMaterial3D_47g1u")
 
-[node name="terminal2" parent="." instance=ExtResource("2_bna8q")]
+[node name="terminal2" parent="terminals" instance=ExtResource("2_bna8q")]
 transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 4.93757, 1.29949, 0)
+material = SubResource("StandardMaterial3D_0xlgp")
+
+[node name="terminal3" parent="terminals" instance=ExtResource("2_bna8q")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 0.323833, 1.29949, 0)
+material = SubResource("StandardMaterial3D_47g1u")
+
+[node name="terminal4" parent="terminals" instance=ExtResource("2_bna8q")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 1.88355, 1.29949, 0)
+material = SubResource("StandardMaterial3D_0xlgp")
+
+[node name="terminal5" parent="terminals" instance=ExtResource("2_bna8q")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -1.22818, 1.29949, 0)
 material = SubResource("StandardMaterial3D_0xlgp")
 
 [node name="player" parent="." instance=ExtResource("1_j6y61")]
@@ -95,5 +111,6 @@ transform = Transform3D(-9.2996e-07, -1.74846e-07, 1, 0, 1, 1.74846e-07, -21.275
 use_collision = true
 
 [node name="terminal_manager" type="Node3D" parent="."]
+script = ExtResource("3_ahj14")
 
 [editable path="player"]
