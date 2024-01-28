@@ -6761,6 +6761,7 @@ size = Vector3(2, 3, 2)
 
 [node name="death" type="CenterContainer" parent="."]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
