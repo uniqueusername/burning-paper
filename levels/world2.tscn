@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="2_bna8q"]
 [ext_resource type="Script" path="res://objects/auditor/auditor.gd" id="2_oil8r"]
 [ext_resource type="Script" path="res://objects/terminal/terminal_manager.gd" id="3_ahj14"]
-[ext_resource type="PackedScene" path="res://levels/world2_walls copy.tscn" id="3_h1xlg"]
+[ext_resource type="PackedScene" uid="uid://bdu1wpnvtayol" path="res://levels/world2_walls.tscn" id="3_h1xlg"]
 [ext_resource type="Script" path="res://objects/utility/win_particles.gd" id="4_wvjsw"]
 [ext_resource type="PackedScene" uid="uid://b2lhlviu62jay" path="res://levels/world2.gltf" id="7_aws66"]
 [ext_resource type="PackedScene" uid="uid://02gwt6tshf8f" path="res://assets/GAMERIGEXPORTANIMS-2.glb" id="7_t240y"]
@@ -364,6 +364,7 @@ script = ExtResource("10_fvo1w")
 transform = Transform3D(0.999934, 0.0115004, -0.000652636, 0, 0.0566579, 0.998394, 0.0115189, -0.998327, 0.0566541, -0.592796, 21.5331, 0.127188)
 environment = SubResource("Environment_ip753")
 projection = 1
+current = true
 fov = 67.0
 size = 25.324
 

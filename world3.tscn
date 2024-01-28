@@ -50,7 +50,7 @@ emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fx50m"]
-size = Vector3(1.6, 3, 3)
+size = Vector3(3.05867, 3, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xlgp"]
 resource_local_to_scene = true
@@ -6852,6 +6852,7 @@ draw_pass_1 = SubResource("BoxMesh_r1tij")
 script = ExtResource("5_6iefq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+visible = false
 navigation_mesh = SubResource("NavigationMesh_ichjo")
 
 [node name="walls" parent="NavigationRegion3D" instance=ExtResource("6_jiq8n")]
@@ -7103,6 +7104,10 @@ projection = 1
 current = true
 fov = 67.0
 size = 25.324
+
+[node name="world assets" type="Node3D" parent="."]
+
+[node name="world 3 assets" type="Node3D" parent="."]
 
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
 [connection signal="end_tracking" from="GAMERIGEXPORTANIMS-2" to="GAMERIGEXPORTANIMS-2/vision_cone" method="_on_end_tracking"]
