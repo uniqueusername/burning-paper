@@ -1,21 +1,21 @@
-[gd_scene load_steps=94 format=3 uid="uid://0xwiu8ojvx0l"]
+[gd_scene load_steps=94 format=3 uid="uid://cvhg8p4or2270"]
 
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
-[ext_resource type="PackedScene" uid="uid://bdu1wpnvtayol" path="res://levels/world2_walls.tscn" id="3_p2an3"]
+[ext_resource type="PackedScene" uid="uid://d0d0eocnw78y0" path="res://levels/world2_walls.tscn" id="3_p2an3"]
 [ext_resource type="Script" path="res://objects/terminal/terminal_manager.gd" id="4_di0r8"]
 [ext_resource type="Script" path="res://objects/utility/win_particles.gd" id="5_6iefq"]
 [ext_resource type="PackedScene" uid="uid://dq65s848tahmh" path="res://levels/world55.gltf" id="6_jiq8n"]
-[ext_resource type="PackedScene" uid="uid://02gwt6tshf8f" path="res://assets/GAMERIGEXPORTANIMS-2.glb" id="7_lh5t5"]
+[ext_resource type="PackedScene" uid="uid://fen22gy3gfqf" path="res://assets/GAMERIGEXPORTANIMS-2.glb" id="7_lh5t5"]
 [ext_resource type="Script" path="res://objects/auditor/auditor.gd" id="8_2hgeu"]
 [ext_resource type="Script" path="res://objects/auditor/vision_cone.gd" id="9_41cbq"]
-[ext_resource type="Texture2D" uid="uid://bhb5e863sxlbc" path="res://assets/GAMERIGEXPORTANIMS-2_theoffice.png" id="9_dnrbx"]
+[ext_resource type="Texture2D" uid="uid://dekk7g0dgyrgu" path="res://assets/GAMERIGEXPORTANIMS-2_theoffice.png" id="9_dnrbx"]
 [ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_8udyv"]
-[ext_resource type="Animation" uid="uid://bigpossu263a1" path="res://assets/walk_animation.res" id="10_gc7v4"]
 [ext_resource type="PackedScene" uid="uid://bmqwxgjesv1o3" path="res://world_assets.tscn" id="11_j7oft"]
 [ext_resource type="PackedScene" uid="uid://bn73vtcbw2mj6" path="res://assets/staticMeshesObjects/BlackServerWall.glb" id="12_po8uc"]
 [ext_resource type="PackedScene" uid="uid://3d2ylkkolfor" path="res://assets/staticMeshesObjects/GreenFilingCabinet.glb" id="13_srfhh"]
 [ext_resource type="PackedScene" uid="uid://b37jk80r3jksp" path="res://assets/staticMeshesObjects/Desk.glb" id="14_rywud"]
+[ext_resource type="PackedScene" uid="uid://c0efyte3cc21" path="res://assets/staticMeshesObjects/PrinterOven.glb" id="16_ct0dn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -6711,7 +6711,6 @@ tracks/31/keys = PackedFloat32Array(0, 1, 0.546373, -0.425431, -0.0686134, 0.718
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nrlol"]
 _data = {
 "DEF_Auditor_Terminal": SubResource("Animation_50al4"),
-"DEF_Auditor_Walk": ExtResource("10_gc7v4"),
 "ourguyAction_002": SubResource("Animation_73y3a"),
 "ourguyAction_003": SubResource("Animation_juc72"),
 "ourguyAction_004": SubResource("Animation_k3uql"),
@@ -6762,7 +6761,7 @@ material = SubResource("StandardMaterial3D_e776h")
 transform = Transform3D(1, 1.05879e-22, 0, 9.63259e-34, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="terminal" parent="terminals" instance=ExtResource("1_npg4p")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -9.34067, 1.29949, -8.80825)
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -8.72676, 1.6529, -8.80825)
 material = SubResource("StandardMaterial3D_47g1u")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal"]
@@ -6771,7 +6770,11 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal/Area3D2"]
-transform = Transform3D(1, -9.40864e-20, 2.00704e-38, 9.40864e-20, 1, 0, -2.00704e-38, 0, 1, 4.26895, 0, 2.42454)
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 8.25285, 0, 2.42454)
+shape = SubResource("BoxShape3D_fx50m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="terminals/terminal/Area3D2"]
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 2.37479, 0, 13.0861)
 shape = SubResource("BoxShape3D_fx50m")
 
 [node name="terminal2" parent="terminals" instance=ExtResource("1_npg4p")]
@@ -6784,11 +6787,11 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal2/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, -6.00799, 0, 4.45079)
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, -5.58571, 0, 4.45079)
 shape = SubResource("BoxShape3D_b5k2c")
 
 [node name="terminal3" parent="terminals" instance=ExtResource("1_npg4p")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 2.43275, 1.29949, -8.82283)
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 2.43275, 1.67643, -8.82283)
 material = SubResource("StandardMaterial3D_6w4sh")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal3"]
@@ -6801,7 +6804,7 @@ transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 7.12033, 
 shape = SubResource("BoxShape3D_dx4gq")
 
 [node name="terminal4" parent="terminals" instance=ExtResource("1_npg4p")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 9.52416, 1.29949, 8.62118)
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 5.56943, 1.46787, 5.06255)
 material = SubResource("StandardMaterial3D_cn21e")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal4"]
@@ -6810,11 +6813,11 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal4/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, -0.319063, 0, -5.08711)
+transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 3.77126, 0, -1.54029)
 shape = SubResource("BoxShape3D_x6lnd")
 
 [node name="terminal5" parent="terminals" instance=ExtResource("1_npg4p")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 6.09275, 1.29949, 1.55371)
+transform = Transform3D(-0.11986, -8.50058e-12, -0.992791, -9.09773e-12, 1, -7.27596e-12, 0.992791, -5.0998e-11, -0.11986, 6.09275, 1.29949, 1.55371)
 material = SubResource("StandardMaterial3D_6gwd1")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal5"]
@@ -6823,7 +6826,11 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal5/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 0, 1, 0, 1.36914e-30, 0, 1, 0.416502, 0, -0.131785)
+transform = Transform3D(1, 0, 0, 1.73472e-18, 1, 1.6263e-18, 0, -8.67362e-19, 1, -1.12598, 0, 11.0804)
+shape = SubResource("BoxShape3D_54fsh")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="terminals/terminal5/Area3D2"]
+transform = Transform3D(0.0504884, -1.59051e-11, -0.998725, -1.37172e-12, 1, -1.59947e-11, 0.998725, 2.17752e-12, 0.0504884, -3.77318, 0, 5.39385)
 shape = SubResource("BoxShape3D_54fsh")
 
 [node name="player" parent="." instance=ExtResource("2_jdb5k")]
@@ -7106,19 +7113,31 @@ size = 25.324
 [node name="world assets" parent="." instance=ExtResource("11_j7oft")]
 
 [node name="BlackServerWall" parent="world assets" instance=ExtResource("12_po8uc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7131, 0.21829, 9.25909)
+transform = Transform3D(-0.999741, 0, 0.0227746, 0, 1, 0, -0.0227746, 0, -0.999741, 3.23806, 0.21829, 9.12825)
 
 [node name="BlackServerWall2" parent="world assets" instance=ExtResource("12_po8uc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47941, 0.21829, 9.25909)
+transform = Transform3D(-0.999741, 0, 0.0227746, 0, 1, 0, -0.0227746, 0, -0.999741, 4.47143, 0.21829, 9.15635)
 
 [node name="GreenFilingCabinet" parent="world assets" instance=ExtResource("13_srfhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8348, 0.220871, 6.87845)
+transform = Transform3D(-0.999358, 0, -0.0358239, 0, 1, 0, 0.0358239, 0, -0.999358, 7.85286, 0.220871, 6.26761)
 
 [node name="GreenFilingCabinet2" parent="world assets" instance=ExtResource("13_srfhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8348, 0.220871, 6.26741)
+transform = Transform3D(-0.999358, 0, -0.0358239, 0, 1, 0, 0.0358239, 0, -0.999358, 7.87475, 0.220871, 6.87825)
 
 [node name="Desk" parent="world assets" instance=ExtResource("14_rywud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1192, 0, 4.91252)
+
+[node name="PrinterOven" parent="world assets" instance=ExtResource("16_ct0dn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.50044, 0.22229, -8.92981)
+
+[node name="BlackServerWall3" parent="world assets" instance=ExtResource("12_po8uc")]
+transform = Transform3D(-0.999741, 0, 0.0227746, 0, 1, 0, -0.0227746, 0, -0.999741, -0.42518, 0.21829, -6.07909)
+
+[node name="BlackServerWall4" parent="world assets" instance=ExtResource("12_po8uc")]
+transform = Transform3D(-0.999741, 0, 0.0227746, 0, 1, 0, -0.0227746, 0, -0.999741, 0.80819, 0.21829, -6.05099)
+
+[node name="Desk2" parent="world assets" instance=ExtResource("14_rywud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5914, 0, -9.08298)
 
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
 [connection signal="end_tracking" from="GAMERIGEXPORTANIMS-2" to="GAMERIGEXPORTANIMS-2/vision_cone" method="_on_end_tracking"]
