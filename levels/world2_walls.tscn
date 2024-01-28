@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0d0eocnw78y0"]
+[gd_scene load_steps=5 format=3 uid="uid://bdu1wpnvtayol"]
 
-[ext_resource type="Material" uid="uid://cko4i7hic6x82" path="res://assets/wptrim.tres" id="1_b17u1"]
+[ext_resource type="Material" path="res://assets/wptrim.tres" id="1_b17u1"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_bgpqp"]
 noise_type = 3
