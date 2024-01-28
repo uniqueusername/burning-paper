@@ -33,6 +33,12 @@ func set_movement_target(target_position: Vector3):
 		current_path_index = 0
 		current_path_point = current_path[0]
 
+func _process(delta):
+	if $hack_timer.is_stopped():
+		$AnimationPlayer.current_animation = "DEF_Auditor_Walk"
+	else:
+		$AnimationPlayer.current_animation = "DEF_Auditor_Terminal"
+
 func _physics_process(delta):
 	if current_path.is_empty():
 		if $hack_timer.is_stopped():

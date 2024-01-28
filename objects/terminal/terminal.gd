@@ -10,6 +10,9 @@ func _ready():
 	material.albedo_color = inactive_color
 	material.emission = inactive_color
 	$OmniLight3D.light_color = inactive_color
+	
+	for child in get_children():
+		child.add_to_group("terminal_areas")
 
 func _on_highlight(object: Node):
 	if object == self:

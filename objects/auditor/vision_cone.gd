@@ -4,6 +4,7 @@ signal retarget
 
 @onready var terminals = get_tree().get_nodes_in_group("terminals")
 @onready var terminal_scanner = get_parent().get_node("terminal_scanner")
+@onready var terminal_areas = get_tree().get_nodes_in_group("terminal_areas")
 @export var cone_width: float = 30 # degrees
 @export var num_rays: int = 30 # even
 @export var debug_rays_visible: bool = false
@@ -47,12 +48,11 @@ func _physics_process(delta):
 					retarget.emit(terminals[randi() % terminals.size()])
 					return
 			
-			# spotted hacked room
-			if (terminals.has(collider) and 
+			# spotted hacked terminal
+			if (terminal_areas.has(collider) and
 				collider.get_parent().active and
 				not tracking):
 				retarget.emit(collider.get_parent().global_position)
-				return
 
 func _on_end_tracking():
 	tracking = false
