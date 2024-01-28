@@ -272,6 +272,8 @@ size = 25.324
 
 [node name="world assets" type="Node3D" parent="."]
 
+[node name="world 3 assets" type="Node3D" parent="."]
+
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
 [connection signal="timeout" from="tposetaxman/start_movement" to="tposetaxman" method="_on_timer_timeout"]
 [connection signal="retarget" from="tposetaxman/vision_cone" to="tposetaxman" method="_on_vision_cone_retarget"]
