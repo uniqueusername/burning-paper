@@ -219,10 +219,9 @@ draw_pass_1 = SubResource("BoxMesh_r1tij")
 script = ExtResource("4_wvjsw")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-visible = false
 navigation_mesh = SubResource("NavigationMesh_ichjo")
 
-[node name="world" parent="NavigationRegion3D" instance=ExtResource("7_aws66")]
+[node name="walls" parent="NavigationRegion3D" instance=ExtResource("7_aws66")]
 
 [node name="tposetaxman" parent="." instance=ExtResource("1_a7ntj")]
 transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -8.64694, 0.224868, 7.39047)
@@ -257,7 +256,6 @@ visible = false
 collision_mask = 0
 
 [node name="RayCast3D2" type="RayCast3D" parent="tposetaxman/vision_cone"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23612, -0.224868, -0.00580764)
 visible = false
 collision_mask = 0
 
