@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cycfgh6uhnl1h"]
+[gd_scene load_steps=5 format=3 uid="uid://cycfgh6uhnl1h"]
 
 [ext_resource type="Script" path="res://objects/player/movement.gd" id="1_ra8br"]
+[ext_resource type="Script" path="res://objects/player/interact.gd" id="2_8mlpd"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xjxf4"]
 
@@ -21,3 +22,12 @@ shape = SubResource("ConvexPolygonShape3D_6fiin")
 [node name="head" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="head"]
+
+[node name="RayCast3D" type="RayCast3D" parent="head/Camera3D"]
+unique_name_in_owner = true
+target_position = Vector3(2.08165e-12, 2.08165e-12, -2)
+collision_mask = 4
+
+[node name="interact" type="Node" parent="."]
+script = ExtResource("2_8mlpd")
+interact_distance = 1032
