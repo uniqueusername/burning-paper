@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://banvq7n5t3gah"]
+[gd_scene load_steps=11 format=3 uid="uid://banvq7n5t3gah"]
 
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_j6y61"]
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="2_bna8q"]
@@ -29,6 +29,20 @@ noise = SubResource("FastNoiseLite_pxbw4")
 albedo_color = Color(0.0156863, 0.392157, 0.482353, 1)
 albedo_texture = SubResource("NoiseTexture2D_7l7q8")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_47g1u"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 4.54
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xlgp"]
+resource_local_to_scene = true
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 4.54
+
 [node name="world" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -41,6 +55,11 @@ material = SubResource("StandardMaterial3D_e776h")
 
 [node name="terminal" parent="." instance=ExtResource("2_bna8q")]
 transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 3.37785, 1.29949, 0)
+material = SubResource("StandardMaterial3D_47g1u")
+
+[node name="terminal2" parent="." instance=ExtResource("2_bna8q")]
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, 4.93757, 1.29949, 0)
+material = SubResource("StandardMaterial3D_0xlgp")
 
 [node name="player" parent="." instance=ExtResource("1_j6y61")]
 collision_layer = 2
