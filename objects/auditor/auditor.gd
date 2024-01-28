@@ -1,14 +1,16 @@
 extends Node3D
 
+signal end_tracking
+
 @onready var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
 @onready var terminals = get_tree().get_nodes_in_group("terminals")
 
 @export var target_position: Vector3 = Vector3(0, 0, 0)
 @export var floor_offset: float = 0.225
-var at_terminal = false
-var terminals_last_nearby = 0
+var at_terminal: bool = false
+var terminals_last_nearby: int = 0
 
-var movement_speed: float = 4.0
+var movement_speed: float = 2.0
 var movement_delta: float
 var path_point_margin: float = 0.5
 
@@ -33,6 +35,8 @@ func set_movement_target(target_position: Vector3):
 
 func _physics_process(delta):
 	if current_path.is_empty():
+		if $hack_timer.is_stopped():
+			set_new_path()
 		return
 
 	movement_delta = movement_speed * delta
@@ -49,17 +53,21 @@ func _physics_process(delta):
 	current_path_point.y = floor_offset
 
 	var new_velocity: Vector3 = global_transform.origin.direction_to(current_path_point) * movement_delta
-
 	transform = transform.interpolate_with(transform.looking_at(current_path_point, Vector3(0, 1, 0), true), 0.1)
-
 	global_transform.origin = global_transform.origin.move_toward(global_transform.origin + new_velocity, movement_delta)
 	
 	if $Area3D.get_overlapping_bodies().size() > terminals_last_nearby:
 		at_terminal = true
 		
 	if at_terminal:
-		$hack_timer.start()
-		
+		end_tracking.emit()
+		for body in $Area3D.get_overlapping_bodies():
+			if terminals.has(body) and body.active:
+				$hack_timer.start()
+			else:
+				set_new_path()
+				at_terminal = false
+	
 	terminals_last_nearby = $Area3D.get_overlapping_bodies().size()
 
 func set_new_path():
@@ -78,5 +86,8 @@ func _on_vision_cone_retarget(target_location: Vector3):
 	set_movement_target(target_location)
 	
 func _on_hack_timer_timeout():
+	for body in $Area3D.get_overlapping_bodies():
+		if terminals.has(body):
+			body.deactivate()
 	set_new_path()
 	at_terminal = false

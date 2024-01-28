@@ -26,6 +26,12 @@ func _on_activate(object: Node):
 		material.albedo_color = active_color
 		material.emission = active_color
 		$OmniLight3D.light_color = active_color
+		
+func deactivate():
+	active = false
+	material.albedo_color = inactive_color
+	material.emission = inactive_color
+	$OmniLight3D.light_color = inactive_color
 
 func connect_interact_signals(player: Node):
 	player.highlight.connect(_on_highlight)
