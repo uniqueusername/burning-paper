@@ -37,5 +37,4 @@ omni_range = 3.905
 
 [node name="outline" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
-visible = false
 mesh = SubResource("ArrayMesh_lygj0")

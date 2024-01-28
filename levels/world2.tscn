@@ -94,4 +94,6 @@ use_collision = true
 transform = Transform3D(-9.2996e-07, -1.74846e-07, 1, 0, 1, 1.74846e-07, -21.275, 7.64274e-15, -4.37114e-08, 9.53609, 0.5005, -2.01736)
 use_collision = true
 
+[node name="terminal_manager" type="Node3D" parent="."]
+
 [editable path="player"]
