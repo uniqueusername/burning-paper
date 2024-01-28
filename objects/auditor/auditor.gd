@@ -66,6 +66,12 @@ func _physics_process(delta):
 	if bodies.size() > terminals_last_nearby:
 		at_terminal = true
 		
+	if $player_killer.has_overlapping_bodies():
+		%player.kill(global_position)
+		movement_speed = 0
+		$hack_timer.start(999999)
+		look_at(%player.global_position, Vector3.UP, true)
+		
 	if at_terminal:
 		end_tracking.emit()
 		for body in $Area3D.get_overlapping_bodies():

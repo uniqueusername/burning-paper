@@ -12,6 +12,7 @@ const BOB_AMP = 0.08
 var t_bob = 0.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var dead = false
 
 @onready var head = $head
 @onready var camera = $head/Camera3D
@@ -22,11 +23,14 @@ func _ready():
 		 
 #camera movement
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
+	if not dead and event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 func _physics_process(delta):
+	if dead:
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -66,3 +70,7 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time + BOB_FREQ) * BOB_AMP 
 	pos.y = cos(time + BOB_FREQ/2) * BOB_AMP
 	return pos
+
+func kill(location):
+	dead = true
+	camera.look_at(location + Vector3(0, 1, 0))
