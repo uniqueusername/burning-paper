@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cliu4q3phxx0f"
-path="res://.godot/imported/tposetaxman.glb-978f1403f3a29f4720caa9a7e16f7dcb.scn"
+uid="uid://b2lhlviu62jay"
+path="res://.godot/imported/world2.gltf-7333126a98934dd796c1bbbc811b4f9c.scn"
 
 [deps]
 
-source_file="res://assets/tposetaxman.glb"
-dest_files=["res://.godot/imported/tposetaxman.glb-978f1403f3a29f4720caa9a7e16f7dcb.scn"]
+source_file="res://levels/world2.gltf"
+dest_files=["res://.godot/imported/world2.gltf-7333126a98934dd796c1bbbc811b4f9c.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=0.5
+nodes/root_scale=1.0
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
