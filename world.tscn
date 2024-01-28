@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_45cb1"]
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="2_w04rm"]
-[ext_resource type="PackedScene" uid="uid://df0mesj8xgr4m" path="res://assets/tposetaxman.glb" id="3_j36ih"]
+[ext_resource type="PackedScene" uid="uid://b6wmtme8ljnoy" path="res://assets/tposetaxman.glb" id="3_4e7fg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -74,7 +74,7 @@ use_collision = true
 transform = Transform3D(-9.2996e-07, -1.74846e-07, 1, 0, 1, 1.74846e-07, -21.275, 7.64274e-15, -4.37114e-08, 9.53609, 0.5005, -2.01736)
 use_collision = true
 
-[node name="tposetaxman" parent="." instance=ExtResource("3_j36ih")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.18452, 0.000500679, -1.60921)
+[node name="tposetaxman" parent="." instance=ExtResource("3_4e7fg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.11396, 0.000499725, -1.35463)
 
 [editable path="CharacterBody3D"]
