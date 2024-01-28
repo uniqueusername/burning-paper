@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://banvq7n5t3gah"]
+[gd_scene load_steps=33 format=3 uid="uid://banvq7n5t3gah"]
 
 [ext_resource type="PackedScene" uid="uid://cliu4q3phxx0f" path="res://assets/tposetaxman.glb" id="1_a7ntj"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_j6y61"]
@@ -49,7 +49,7 @@ emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fx50m"]
-size = Vector3(1.6, 3, 3)
+size = Vector3(3.05867, 3, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xlgp"]
 resource_local_to_scene = true
@@ -104,6 +104,9 @@ vertices = PackedVector3Array(-2.8012, 3.50051, -10.4047, -3.0512, 3.50051, -10.
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(10, 7, 11), PackedInt32Array(11, 7, 12), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(17, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(24, 23, 21), PackedInt32Array(21, 23, 22), PackedInt32Array(29, 28, 25), PackedInt32Array(25, 28, 27), PackedInt32Array(25, 27, 26), PackedInt32Array(30, 34, 31), PackedInt32Array(31, 34, 32), PackedInt32Array(32, 34, 33), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(41, 40, 39), PackedInt32Array(44, 43, 42), PackedInt32Array(48, 47, 45), PackedInt32Array(45, 47, 46), PackedInt32Array(53, 52, 49), PackedInt32Array(49, 52, 51), PackedInt32Array(49, 51, 50), PackedInt32Array(56, 55, 54), PackedInt32Array(59, 58, 60), PackedInt32Array(60, 58, 61), PackedInt32Array(61, 58, 57), PackedInt32Array(65, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(67, 66, 68), PackedInt32Array(68, 66, 69), PackedInt32Array(72, 71, 70), PackedInt32Array(75, 74, 76), PackedInt32Array(76, 74, 73), PackedInt32Array(76, 73, 77), PackedInt32Array(78, 80, 79), PackedInt32Array(83, 82, 81), PackedInt32Array(85, 84, 86), PackedInt32Array(86, 84, 87), PackedInt32Array(89, 88, 90), PackedInt32Array(90, 88, 91), PackedInt32Array(93, 92, 94), PackedInt32Array(96, 95, 97), PackedInt32Array(97, 95, 98), PackedInt32Array(101, 100, 99), PackedInt32Array(103, 102, 104), PackedInt32Array(104, 102, 105), PackedInt32Array(107, 106, 108), PackedInt32Array(108, 106, 109), PackedInt32Array(111, 110, 112), PackedInt32Array(112, 110, 113), PackedInt32Array(115, 114, 116), PackedInt32Array(116, 114, 117), PackedInt32Array(120, 119, 118), PackedInt32Array(123, 122, 121), PackedInt32Array(125, 124, 126), PackedInt32Array(126, 124, 128), PackedInt32Array(126, 128, 127), PackedInt32Array(131, 130, 129), PackedInt32Array(133, 132, 134), PackedInt32Array(134, 132, 135), PackedInt32Array(137, 136, 138), PackedInt32Array(138, 136, 139), PackedInt32Array(141, 140, 142), PackedInt32Array(142, 140, 143), PackedInt32Array(145, 144, 146), PackedInt32Array(146, 144, 147), PackedInt32Array(149, 148, 150), PackedInt32Array(150, 148, 151), PackedInt32Array(155, 154, 152), PackedInt32Array(152, 154, 153)]
 agent_radius = 0.1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_676kj"]
+size = Vector3(22.2327, 3.63464, 10.0232)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycf0h"]
 size = Vector3(2, 1.5, 2)
 
@@ -132,7 +135,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal/Area3D2"]
-transform = Transform3D(1, -9.40864e-20, 2.00704e-38, 9.40864e-20, 1, 0, -2.00704e-38, 0, 1, 4.26895, 0, 2.42454)
+transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, 4.99829, 0, 2.42454)
 shape = SubResource("BoxShape3D_fx50m")
 
 [node name="terminal2" parent="terminals" instance=ExtResource("2_bna8q")]
@@ -222,8 +225,16 @@ navigation_mesh = SubResource("NavigationMesh_ichjo")
 [node name="world" parent="NavigationRegion3D" instance=ExtResource("7_aws66")]
 
 [node name="tposetaxman" parent="." instance=ExtResource("1_a7ntj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24193, 0.224868, 0)
+transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -8.64694, 0.224868, 7.39047)
 script = ExtResource("2_oil8r")
+
+[node name="terminal_scanner" type="Area3D" parent="tposetaxman"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tposetaxman/terminal_scanner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.629272, 1.31732, 5.10071)
+shape = SubResource("BoxShape3D_676kj")
 
 [node name="Area3D" type="Area3D" parent="tposetaxman"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.80885, 0)
@@ -233,17 +244,11 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tposetaxman/Area3D"]
 shape = SubResource("BoxShape3D_ycf0h")
 
-[node name="start_movement" type="Timer" parent="tposetaxman"]
-wait_time = 0.1
-one_shot = true
-autostart = true
-
 [node name="vision_cone" type="RayCast3D" parent="tposetaxman"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00580788, 0, 0.00580764)
-target_position = Vector3(2.08165e-12, 2.08165e-12, 10)
-collision_mask = 8
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12)
+target_position = Vector3(2.08165e-12, 2.08165e-12, 100)
+collision_mask = 11
 collide_with_areas = true
-collide_with_bodies = false
 script = ExtResource("9_yyfxx")
 debug_rays_visible = true
 
@@ -256,6 +261,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23612, -0.224868, -0.005807
 visible = false
 collision_mask = 0
 
+[node name="start_movement" type="Timer" parent="tposetaxman"]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
 [node name="hack_timer" type="Timer" parent="tposetaxman"]
 wait_time = 3.0
 one_shot = true
@@ -265,12 +275,14 @@ script = ExtResource("10_fvo1w")
 transform = Transform3D(0.999934, 0.0115004, -0.000652636, 0, 0.0566579, 0.998394, 0.0115189, -0.998327, 0.0566541, -0.592796, 21.5331, 0.127188)
 environment = SubResource("Environment_ip753")
 projection = 1
+current = true
 fov = 67.0
 size = 25.324
 
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
-[connection signal="timeout" from="tposetaxman/start_movement" to="tposetaxman" method="_on_timer_timeout"]
+[connection signal="end_tracking" from="tposetaxman" to="tposetaxman/vision_cone" method="_on_end_tracking"]
 [connection signal="retarget" from="tposetaxman/vision_cone" to="tposetaxman" method="_on_vision_cone_retarget"]
+[connection signal="timeout" from="tposetaxman/start_movement" to="tposetaxman" method="_on_timer_timeout"]
 [connection signal="timeout" from="tposetaxman/hack_timer" to="tposetaxman" method="_on_hack_timer_timeout"]
 
 [editable path="player"]
