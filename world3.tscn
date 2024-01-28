@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://0xwiu8ojvx0l"]
+[gd_scene load_steps=96 format=3 uid="uid://0xwiu8ojvx0l"]
 
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
@@ -12,10 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://bhb5e863sxlbc" path="res://assets/GAMERIGEXPORTANIMS-2_theoffice.png" id="9_dnrbx"]
 [ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_8udyv"]
 [ext_resource type="Animation" uid="uid://bigpossu263a1" path="res://assets/walk_animation.res" id="10_gc7v4"]
-[ext_resource type="PackedScene" uid="uid://bmqwxgjesv1o3" path="res://world_assets.tscn" id="11_j7oft"]
+[ext_resource type="PackedScene" path="res://world_assets.tscn" id="11_j7oft"]
 [ext_resource type="PackedScene" uid="uid://bn73vtcbw2mj6" path="res://assets/staticMeshesObjects/BlackServerWall.glb" id="12_po8uc"]
 [ext_resource type="PackedScene" uid="uid://3d2ylkkolfor" path="res://assets/staticMeshesObjects/GreenFilingCabinet.glb" id="13_srfhh"]
 [ext_resource type="PackedScene" uid="uid://b37jk80r3jksp" path="res://assets/staticMeshesObjects/Desk.glb" id="14_rywud"]
+
+[sub_resource type="GDScript" id="GDScript_8d8bx"]
+script/source = "extends CenterContainer
+
+func _on_player_die():
+	visible = true
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -6745,9 +6752,29 @@ size = Vector3(22.2327, 3.63464, 10.0232)
 [sub_resource type="BoxShape3D" id="BoxShape3D_31a10"]
 size = Vector3(2, 1.5, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yu80j"]
+size = Vector3(2, 3, 2)
+
 [sub_resource type="Environment" id="Environment_ip753"]
 
 [node name="world" type="Node3D"]
+
+[node name="death" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_8d8bx")
+
+[node name="Label" type="Label" parent="death"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 108
+text = "you died
+repent...
+(R to restart)"
+horizontal_alignment = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oofkt")
@@ -6859,16 +6886,17 @@ navigation_mesh = SubResource("NavigationMesh_ichjo")
 [node name="walls" parent="NavigationRegion3D" instance=ExtResource("6_jiq8n")]
 visible = false
 
-[node name="GAMERIGEXPORTANIMS-2" parent="." instance=ExtResource("7_lh5t5")]
-transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, 0.30746, 0.449736, 8.06907)
+[node name="enemy_guy" parent="." instance=ExtResource("7_lh5t5")]
+unique_name_in_owner = true
+transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -4.60712, 0.449736, 2.18081)
 script = ExtResource("8_2hgeu")
 
-[node name="Skeleton3D" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform" index="0"]
+[node name="Skeleton3D" parent="enemy_guy/wallsegment armature_deform" index="0"]
 bones/0/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
 bones/1/rotation = Quaternion(0.0769135, 0.687011, 0.0735104, 0.718816)
 bones/2/rotation = Quaternion(0.96334, 0.114492, -0.219887, -0.102551)
 bones/2/scale = Vector3(1, 1, 1)
-bones/3/rotation = Quaternion(-0.129045, -0.0099164, -0.245203, 0.960794)
+bones/3/rotation = Quaternion(-0.129045, -0.00991636, -0.245203, 0.960794)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/rotation = Quaternion(-0.106243, -0.0095451, -0.194371, 0.975111)
 bones/4/scale = Vector3(1, 1, 1)
@@ -6948,129 +6976,137 @@ bones/54/rotation = Quaternion(-0.606327, 0.0801836, 0.784334, 0.103725)
 bones/54/scale = Vector3(1, 1, 1)
 bones/55/rotation = Quaternion(0, 0.708847, 0, 0.705362)
 
-[node name="-1PaperL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="0"]
+[node name="-1PaperL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="0"]
 mesh = SubResource("ArrayMesh_w8yes")
 skin = SubResource("Skin_oxx4y")
 
-[node name="-2PaperL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="1"]
+[node name="-2PaperL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="1"]
 mesh = SubResource("ArrayMesh_8ux2b")
 skin = SubResource("Skin_oxx4y")
 
-[node name="-2PaperL_001" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="2"]
+[node name="-2PaperL_001" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="2"]
 mesh = SubResource("ArrayMesh_vofap")
 skin = SubResource("Skin_oxx4y")
 
-[node name="-3PaperL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="3"]
+[node name="-3PaperL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="3"]
 mesh = SubResource("ArrayMesh_jhl8s")
 skin = SubResource("Skin_oxx4y")
 
-[node name="1PaperR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="4"]
+[node name="1PaperR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="4"]
 mesh = SubResource("ArrayMesh_3jye2")
 skin = SubResource("Skin_oxx4y")
 
-[node name="2PaperR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="5"]
+[node name="2PaperR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="5"]
 mesh = SubResource("ArrayMesh_t4r5b")
 skin = SubResource("Skin_oxx4y")
 
-[node name="3PaperR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="6"]
+[node name="3PaperR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="6"]
 mesh = SubResource("ArrayMesh_xw2s4")
 skin = SubResource("Skin_oxx4y")
 
-[node name="armR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="7"]
+[node name="armR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="7"]
 mesh = SubResource("ArrayMesh_lxwnf")
 skin = SubResource("Skin_oxx4y")
 
-[node name="collar" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="8"]
+[node name="collar" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="8"]
 mesh = SubResource("ArrayMesh_wnv5u")
 skin = SubResource("Skin_oxx4y")
 
-[node name="face" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="9"]
+[node name="face" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="9"]
 mesh = SubResource("ArrayMesh_3wje4")
 skin = SubResource("Skin_oxx4y")
 
-[node name="forefingerL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="10"]
+[node name="forefingerL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="10"]
 mesh = SubResource("ArrayMesh_ph1n2")
 skin = SubResource("Skin_oxx4y")
 
-[node name="forefingerR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="11"]
+[node name="forefingerR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="11"]
 mesh = SubResource("ArrayMesh_k7mq7")
 skin = SubResource("Skin_oxx4y")
 
-[node name="hand" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="12"]
+[node name="hand" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="12"]
 mesh = SubResource("ArrayMesh_8l2fg")
 skin = SubResource("Skin_oxx4y")
 
-[node name="handL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="13"]
+[node name="handL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="13"]
 mesh = SubResource("ArrayMesh_wtcg4")
 skin = SubResource("Skin_oxx4y")
 
-[node name="MiddleFingerR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="14"]
+[node name="MiddleFingerR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="14"]
 mesh = SubResource("ArrayMesh_u0o1s")
 skin = SubResource("Skin_oxx4y")
 
-[node name="MidFingerL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="15"]
+[node name="MidFingerL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="15"]
 mesh = SubResource("ArrayMesh_8g4wt")
 skin = SubResource("Skin_oxx4y")
 
-[node name="PinkyL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="16"]
+[node name="PinkyL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="16"]
 mesh = SubResource("ArrayMesh_p0xh3")
 skin = SubResource("Skin_oxx4y")
 
-[node name="PinkyR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="17"]
+[node name="PinkyR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="17"]
 mesh = SubResource("ArrayMesh_sfry0")
 skin = SubResource("Skin_oxx4y")
 
-[node name="Pocket(R)" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="18"]
+[node name="Pocket(R)" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="18"]
 mesh = SubResource("ArrayMesh_f4j8m")
 skin = SubResource("Skin_oxx4y")
 
-[node name="right arm" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="19"]
+[node name="right arm" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="19"]
 mesh = SubResource("ArrayMesh_xlr8f")
 skin = SubResource("Skin_oxx4y")
 
-[node name="ShoeL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="20"]
+[node name="ShoeL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="20"]
 mesh = SubResource("ArrayMesh_mw75r")
 skin = SubResource("Skin_oxx4y")
 
-[node name="ShoeR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="21"]
+[node name="ShoeR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="21"]
 mesh = SubResource("ArrayMesh_fm4cp")
 skin = SubResource("Skin_oxx4y")
 
-[node name="thumbL" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="22"]
+[node name="thumbL" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="22"]
 mesh = SubResource("ArrayMesh_qxndw")
 skin = SubResource("Skin_oxx4y")
 
-[node name="thumbR" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="23"]
+[node name="thumbR" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="23"]
 mesh = SubResource("ArrayMesh_xk4of")
 skin = SubResource("Skin_oxx4y")
 
-[node name="torsoLegs" parent="GAMERIGEXPORTANIMS-2/wallsegment armature_deform/Skeleton3D" index="24"]
+[node name="torsoLegs" parent="enemy_guy/wallsegment armature_deform/Skeleton3D" index="24"]
 mesh = SubResource("ArrayMesh_urofj")
 skin = SubResource("Skin_oxx4y")
 
-[node name="AnimationPlayer" parent="GAMERIGEXPORTANIMS-2" index="2"]
+[node name="AnimationPlayer" parent="enemy_guy" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_nrlol")
 }
 
-[node name="terminal_scanner" type="Area3D" parent="GAMERIGEXPORTANIMS-2"]
+[node name="terminal_scanner" type="Area3D" parent="enemy_guy"]
 transform = Transform3D(1, 0, -1.04293e-08, 0, 1, 0, 1.32574e-08, 0, 1, 0, 0, 0)
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GAMERIGEXPORTANIMS-2/terminal_scanner"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy_guy/terminal_scanner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.629272, 1.31732, 5.10071)
 shape = SubResource("BoxShape3D_abcj4")
 
-[node name="Area3D" type="Area3D" parent="GAMERIGEXPORTANIMS-2"]
+[node name="Area3D" type="Area3D" parent="enemy_guy"]
 transform = Transform3D(2, 0, -2.08587e-08, 0, 2, 0, 2.65149e-08, 0, 2, 0, 1.80885, 0)
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GAMERIGEXPORTANIMS-2/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy_guy/Area3D"]
 shape = SubResource("BoxShape3D_31a10")
 
-[node name="vision_cone" type="RayCast3D" parent="GAMERIGEXPORTANIMS-2"]
+[node name="player_killer" type="Area3D" parent="enemy_guy"]
+transform = Transform3D(1, 0, -1.04293e-08, 0, 1, 0, 1.32574e-08, 0, 1, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="enemy_guy/player_killer"]
+shape = SubResource("BoxShape3D_yu80j")
+
+[node name="vision_cone" type="RayCast3D" parent="enemy_guy"]
 transform = Transform3D(1, 0, -1.04293e-08, 0, 1, 0, 1.32574e-08, 0, 1, 0, 0.5, 0)
 target_position = Vector3(2.08165e-12, 2.08165e-12, 100)
 collision_mask = 11
@@ -7078,20 +7114,20 @@ collide_with_areas = true
 script = ExtResource("9_41cbq")
 debug_rays_visible = true
 
-[node name="RayCast3D" type="RayCast3D" parent="GAMERIGEXPORTANIMS-2/vision_cone"]
+[node name="RayCast3D" type="RayCast3D" parent="enemy_guy/vision_cone"]
 visible = false
 collision_mask = 0
 
-[node name="RayCast3D2" type="RayCast3D" parent="GAMERIGEXPORTANIMS-2/vision_cone"]
+[node name="RayCast3D2" type="RayCast3D" parent="enemy_guy/vision_cone"]
 visible = false
 collision_mask = 0
 
-[node name="start_movement" type="Timer" parent="GAMERIGEXPORTANIMS-2"]
+[node name="start_movement" type="Timer" parent="enemy_guy"]
 wait_time = 0.1
 one_shot = true
 autostart = true
 
-[node name="hack_timer" type="Timer" parent="GAMERIGEXPORTANIMS-2"]
+[node name="hack_timer" type="Timer" parent="enemy_guy"]
 wait_time = 3.0
 one_shot = true
 script = ExtResource("10_8udyv")
@@ -7120,11 +7156,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8348, 0.220871, 6.26741)
 [node name="Desk" parent="world assets" instance=ExtResource("14_rywud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1192, 0, 4.91252)
 
+[connection signal="die" from="player" to="death" method="_on_player_die"]
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
-[connection signal="end_tracking" from="GAMERIGEXPORTANIMS-2" to="GAMERIGEXPORTANIMS-2/vision_cone" method="_on_end_tracking"]
-[connection signal="retarget" from="GAMERIGEXPORTANIMS-2/vision_cone" to="GAMERIGEXPORTANIMS-2" method="_on_vision_cone_retarget"]
-[connection signal="timeout" from="GAMERIGEXPORTANIMS-2/start_movement" to="GAMERIGEXPORTANIMS-2" method="_on_timer_timeout"]
-[connection signal="timeout" from="GAMERIGEXPORTANIMS-2/hack_timer" to="GAMERIGEXPORTANIMS-2" method="_on_hack_timer_timeout"]
+[connection signal="end_tracking" from="enemy_guy" to="enemy_guy/vision_cone" method="_on_end_tracking"]
+[connection signal="retarget" from="enemy_guy/vision_cone" to="enemy_guy" method="_on_vision_cone_retarget"]
+[connection signal="timeout" from="enemy_guy/start_movement" to="enemy_guy" method="_on_timer_timeout"]
+[connection signal="timeout" from="enemy_guy/hack_timer" to="enemy_guy" method="_on_hack_timer_timeout"]
 
 [editable path="player"]
-[editable path="GAMERIGEXPORTANIMS-2"]
+[editable path="enemy_guy"]

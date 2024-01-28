@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_45cb1"]
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="2_w04rm"]
 [ext_resource type="PackedScene" uid="uid://cliu4q3phxx0f" path="res://assets/tposetaxman.glb" id="3_4e7fg"]
-[ext_resource type="Material" uid="uid://cko4i7hic6x82" path="res://assets/wptrim.tres" id="3_4k8rv"]
+[ext_resource type="Material" path="res://assets/wptrim.tres" id="3_4k8rv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
