@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="1_45cb1"]
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="2_w04rm"]
 [ext_resource type="PackedScene" uid="uid://b6wmtme8ljnoy" path="res://assets/tposetaxman.glb" id="3_4e7fg"]
+[ext_resource type="Material" uid="uid://cko4i7hic6x82" path="res://assets/wptrim.tres" id="3_4k8rv"]
 [ext_resource type="PackedScene" uid="uid://df0mesj8xgr4m" path="res://assets/wallsegment3x3.glb" id="3_j36ih"]
-[ext_resource type="Material" uid="uid://dsabv2dmewhll" path="res://assets/wpnotrim.tres" id="3_ti2r8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tobbq"]
 sky_horizon_color = Color(0.647059, 0.654902, 0.670588, 1)
@@ -29,7 +29,7 @@ noise_type = 3
 noise = SubResource("FastNoiseLite_pxbw4")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e776h"]
-albedo_color = Color(0.0156863, 0.392157, 0.482353, 1)
+albedo_color = Color(0.352941, 0.337255, 0.0431373, 1)
 albedo_texture = SubResource("NoiseTexture2D_7l7q8")
 
 [node name="world" type="Node3D"]
@@ -60,26 +60,26 @@ transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596
 [node name="walls" type="Node3D" parent="."]
 
 [node name="back wall" type="CSGBox3D" parent="walls"]
-transform = Transform3D(21.275, 0, 0, 0, 1, 0, 0, 0, 1, -0.463905, 1.52565, 8.98264)
-material_override = ExtResource("3_ti2r8")
+transform = Transform3D(-21.275, -8.74228e-08, 0, 1.85992e-06, -1, 0, 0, 0, 1, -0.463905, 1.52565, 8.98264)
+material_override = ExtResource("3_4k8rv")
 use_collision = true
 size = Vector3(1, 3, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="walls"]
-transform = Transform3D(21.275, 0, 0, 0, 1, 0, 0, 0, 1, -0.36, 1.526, -10.017)
-material_override = ExtResource("3_ti2r8")
+transform = Transform3D(21.275, 0, 0, 0, 1, 0, 0, 0, 1, -0.36, 1.526, -9.92064)
+material_override = ExtResource("3_4k8rv")
 use_collision = true
 size = Vector3(1, 3, 1)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="walls"]
 transform = Transform3D(-9.2996e-07, -1.74846e-07, 1, 0, 1, 1.74846e-07, -21.275, 7.64274e-15, -4.37114e-08, -10.464, 1.526, -0.429)
-material_override = ExtResource("3_ti2r8")
+material_override = ExtResource("3_4k8rv")
 use_collision = true
 size = Vector3(0.850708, 3, 1)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="walls"]
-transform = Transform3D(-9.2996e-07, -1.74846e-07, 1, 0, 1, 1.74846e-07, -21.275, 7.64274e-15, -4.37114e-08, 9.53609, 1.5005, -0.547432)
-material_override = ExtResource("3_ti2r8")
+transform = Transform3D(9.2996e-07, 3.82137e-15, 1, 1.85992e-06, -1, 0, 21.275, 8.74228e-08, -4.37114e-08, 9.53609, 1.5005, -0.547432)
+material_override = ExtResource("3_4k8rv")
 use_collision = true
 size = Vector3(0.861816, 3, 1)
 
