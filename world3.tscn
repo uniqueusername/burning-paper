@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://0xwiu8ojvx0l"]
+[gd_scene load_steps=97 format=3 uid="uid://0xwiu8ojvx0l"]
 
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bhb5e863sxlbc" path="res://assets/GAMERIGEXPORTANIMS-2_theoffice.png" id="9_dnrbx"]
 [ext_resource type="Script" path="res://objects/auditor/hack_timer.gd" id="10_8udyv"]
 [ext_resource type="Animation" uid="uid://bigpossu263a1" path="res://assets/walk_animation.res" id="10_gc7v4"]
-[ext_resource type="PackedScene" path="res://world_assets.tscn" id="11_j7oft"]
+[ext_resource type="PackedScene" uid="uid://bmqwxgjesv1o3" path="res://world_assets.tscn" id="11_j7oft"]
 [ext_resource type="PackedScene" uid="uid://bn73vtcbw2mj6" path="res://assets/staticMeshesObjects/BlackServerWall.glb" id="12_po8uc"]
+[ext_resource type="AudioStream" uid="uid://chg5pn2vxvb82" path="res://assets/sounds/scary walk.wav" id="13_66xst"]
 [ext_resource type="PackedScene" uid="uid://3d2ylkkolfor" path="res://assets/staticMeshesObjects/GreenFilingCabinet.glb" id="13_srfhh"]
 [ext_resource type="PackedScene" uid="uid://b37jk80r3jksp" path="res://assets/staticMeshesObjects/Desk.glb" id="14_rywud"]
 
@@ -37,6 +38,7 @@ sky = SubResource("Sky_2vkuy")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
+fog_enabled = true
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 0.25
 volumetric_fog_density = 0.25
@@ -6889,7 +6891,7 @@ visible = false
 
 [node name="enemy_guy" parent="." instance=ExtResource("7_lh5t5")]
 unique_name_in_owner = true
-transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, -4.60712, 0.449736, 2.18081)
+transform = Transform3D(-0.7998, 0, 0.600267, 0, 1, 0, -0.600267, 0, -0.7998, 0.586593, 0.449736, 7.8718)
 script = ExtResource("8_2hgeu")
 
 [node name="Skeleton3D" parent="enemy_guy/wallsegment armature_deform" index="0"]
@@ -7132,6 +7134,12 @@ autostart = true
 wait_time = 3.0
 one_shot = true
 script = ExtResource("10_8udyv")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="enemy_guy"]
+transform = Transform3D(1, 0, -2.83584e-08, 0, 1, 0, 3.71232e-08, 0, 1, -0.061317, -0.000459671, 0.00942612)
+stream = ExtResource("13_66xst")
+autoplay = true
+max_distance = 12.5
 
 [node name="top_view_cam" type="Camera3D" parent="."]
 transform = Transform3D(0.999934, 0.0115004, -0.000652636, 0, 0.0566579, 0.998394, 0.0115189, -0.998327, 0.0566541, -0.592796, 21.5331, 0.127188)

@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 signal die
 
-const WALK = 3.0
+const WALK = 2.0
 const SPRINT = 10.0
 var speed = WALK
 const JUMP_VELOCITY = 4.5
@@ -52,9 +52,13 @@ func _physics_process(delta):
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	if direction:
+		if not $AudioStreamPlayer3D.playing:
+			$AudioStreamPlayer3D.play(0.14)
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed
 	else:
+		if $AudioStreamPlayer3D.playing:
+			$AudioStreamPlayer3D.stop()
 		velocity.x = lerp(velocity.x, direction.x *speed, delta * 10.0)
 		velocity.z = lerp(velocity.z, direction.z *speed, delta * 10.0)
 #head bob 
