@@ -77,6 +77,7 @@ func _physics_process(delta):
 		for body in $Area3D.get_overlapping_bodies():
 			if terminals.has(body) and body.active:
 				$hack_timer.start()
+				$typing.play()
 			else:
 				set_new_path()
 				at_terminal = false
@@ -99,6 +100,7 @@ func _on_vision_cone_retarget(target_location: Vector3):
 	set_movement_target(target_location)
 	
 func _on_hack_timer_timeout():
+	$typing.stop()
 	for body in $Area3D.get_overlapping_bodies():
 		if terminals.has(body):
 			body.deactivate()

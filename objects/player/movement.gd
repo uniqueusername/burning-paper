@@ -21,6 +21,7 @@ var dead = false
 #no cursor
 func _ready():
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		$AudioStreamPlayer3D.volume_db = -12
 		 
 #camera movement
 func _unhandled_input(event):
