@@ -6806,7 +6806,7 @@ transform = Transform3D(1, -9.40864e-20, 2.00704e-38, 9.40864e-20, 1, 0, -2.0070
 shape = SubResource("BoxShape3D_fx50m")
 
 [node name="terminal2" parent="terminals" instance=ExtResource("1_npg4p")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -1.60529, 1.29949, -1.2021)
+transform = Transform3D(-0.984808, 0, -0.173648, 0, 1, 0, 0.173648, 0, -0.984808, -1.68183, 1.66705, 8.55488)
 material = SubResource("StandardMaterial3D_0xlgp")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal2"]
@@ -6861,6 +6861,9 @@ shape = SubResource("BoxShape3D_54fsh")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.02862, 1, 8.58457)
 collision_layer = 2
+
+[node name="head" parent="player" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.543586, 0)
 
 [node name="RayCast3D" parent="player/head/Camera3D" index="0"]
 target_position = Vector3(2.08165e-12, 2.08165e-12, -1)
@@ -7157,25 +7160,25 @@ size = 25.324
 [node name="population" type="Node3D" parent="."]
 
 [node name="Node3D" parent="population" instance=ExtResource("15_d8rjv")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.7464, 0.246857, 6.88269)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.746, 0.24, 6.863)
 
 [node name="Node3D2" parent="population" instance=ExtResource("15_d8rjv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.87908, 0.246857, 5.70485)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.87908, 0.246857, 5.35121)
 
 [node name="Node3D3" parent="population" instance=ExtResource("15_d8rjv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.59559, 0.246857, 1.64356)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.59559, 0.246857, 1.55108)
 
 [node name="Node3D4" parent="population" instance=ExtResource("15_d8rjv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.22352, 0.246857, -0.102848)
 
 [node name="Node3D8" parent="population" instance=ExtResource("15_d8rjv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2688, 0.246857, -2.83349)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31117, 0.246857, -2.9041)
 
 [node name="Node3D9" parent="population" instance=ExtResource("15_d8rjv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54217, 0.246857, -3.64131)
 
 [node name="ScenePrinterOvenColli" parent="population" instance=ExtResource("16_akn05")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.53627, 0.101442, 2.16742)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.53627, 0.101442, 2.07494)
 
 [node name="ScenePrinterOvenColli2" parent="population" instance=ExtResource("16_akn05")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.24395, 0.16455, -1.8586)
@@ -7183,11 +7186,14 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.243
 [node name="ScenePrinterOvenColli3" parent="population" instance=ExtResource("16_akn05")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.10927, 0.227862, 4.99426)
 
+[node name="ScenePrinterOvenColli4" parent="population" instance=ExtResource("16_akn05")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.6725, 0.227862, 8.49667)
+
 [node name="SceneFilingCabinetColli" parent="population" instance=ExtResource("17_cotwa")]
-transform = Transform3D(-0.461749, 0, 0.887011, 0, 1, 0, -0.887011, 0, -0.461749, -3.1853, 0.174636, 7.63641)
+transform = Transform3D(-0.461749, 0, 0.887011, 0, 1, 0, -0.887011, 0, -0.461749, -3.1853, 0.174636, 7.28277)
 
 [node name="SceneFilingCabinetColli2" parent="population" instance=ExtResource("17_cotwa")]
-transform = Transform3D(-0.461749, 0, 0.887011, 0, 1, 0, -0.887011, 0, -0.461749, -4.2777, 0.174636, 8.97769)
+transform = Transform3D(-0.0382134, 0.838058, -0.544241, 0.99927, 0.0320484, -0.0208125, -2.38069e-08, -0.544639, -0.838671, -3.6583, 0.494532, 8.51197)
 
 [node name="SceneFilingCabinetColli3" parent="population" instance=ExtResource("17_cotwa")]
 transform = Transform3D(0.382683, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382683, -6.69481, 0.174636, 1.70879)

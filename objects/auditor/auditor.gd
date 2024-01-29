@@ -10,7 +10,8 @@ signal end_tracking
 var at_terminal: bool = false
 var terminals_last_nearby: int = 0
 
-var movement_speed: float = 2.0
+#prev.: val: 2
+var movement_speed: float = 2.5
 var movement_delta: float
 var path_point_margin: float = 0.5
 

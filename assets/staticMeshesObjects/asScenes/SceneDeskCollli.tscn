@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://brrv1kf1373be"]
+[gd_scene load_steps=3 format=3 uid="uid://brrv1kf1373be"]
+
+[ext_resource type="PackedScene" uid="uid://cljwvavijcm" path="res://assets/staticMeshesObjects/deskimport2.glb" id="1_i5e06"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ud8lg"]
 size = Vector3(2.72162, 1.01355, 1)
 
 [node name="DeskColli" type="Node3D"]
+
+[node name="deskimport2" parent="." instance=ExtResource("1_i5e06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.00729, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0019, 0, 0)
