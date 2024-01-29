@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwxuljr8qvivr"]
+
+[ext_resource type="PackedScene" uid="uid://c0efyte3cc21" path="res://assets/staticMeshesObjects/PrinterOven.glb" id="1_oswyy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p7j1v"]
+
+[node name="ScenePrinterOvenColli" type="Node3D"]
+
+[node name="PrinterOven" parent="." instance=ExtResource("1_oswyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9887, 0.0190612, -0.325684)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PrinterOven"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PrinterOven/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98035, 0.591283, 0)
+shape = SubResource("BoxShape3D_p7j1v")

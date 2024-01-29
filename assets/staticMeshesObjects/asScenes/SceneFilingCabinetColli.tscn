@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://lfid8mliiemr"]
+
+[ext_resource type="PackedScene" uid="uid://3d2ylkkolfor" path="res://assets/staticMeshesObjects/GreenFilingCabinet.glb" id="1_sd0l6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8hi1"]
+size = Vector3(0.603638, 1.80737, 0.596558)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GreenFilingCabinet" parent="." instance=ExtResource("1_sd0l6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00299, 0.00944805, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GreenFilingCabinet"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GreenFilingCabinet/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00157, 0.902041, -0.00592041)
+shape = SubResource("BoxShape3D_c8hi1")
