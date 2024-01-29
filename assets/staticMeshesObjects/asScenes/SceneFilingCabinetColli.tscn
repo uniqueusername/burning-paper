@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_c8hi1"]
 size = Vector3(0.603638, 1.80737, 0.596558)
 
-[node name="Node3D" type="Node3D"]
+[node name="SceneFilingCabinetColli" type="Node3D"]
 
 [node name="GreenFilingCabinet" parent="." instance=ExtResource("1_sd0l6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.00299, 0.00944805, 0)

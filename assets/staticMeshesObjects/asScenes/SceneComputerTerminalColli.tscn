@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://duyh6r2sjv6u3"]
+
+[ext_resource type="PackedScene" uid="uid://bigpossu263a1" path="res://assets/TanTerminalMesh.glb" id="1_0kk4g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0135k"]
+size = Vector3(0.494629, 0.682617, 0.634399)
+
+[node name="SceneComputerTerminalColli" type="Node3D"]
+
+[node name="TanTerminalMesh" parent="." instance=ExtResource("1_0kk4g")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TanTerminalMesh"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TanTerminalMesh/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0065918, 0.343677, 0.0896606)
+shape = SubResource("BoxShape3D_0135k")

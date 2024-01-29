@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://0xwiu8ojvx0l"]
+[gd_scene load_steps=98 format=3 uid="uid://0xwiu8ojvx0l"]
 
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
@@ -15,6 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://chg5pn2vxvb82" path="res://assets/sounds/scary walk.wav" id="13_66xst"]
 [ext_resource type="AudioStream" uid="uid://c8fxo60fpr5k6" path="res://assets/sounds/typing.mp3" id="14_fdi1w"]
 [ext_resource type="PackedScene" uid="uid://brrv1kf1373be" path="res://assets/staticMeshesObjects/asScenes/SceneDeskCollli.tscn" id="15_d8rjv"]
+[ext_resource type="PackedScene" uid="uid://cwxuljr8qvivr" path="res://assets/staticMeshesObjects/asScenes/ScenePrinterOvenColli.tscn" id="16_akn05"]
+[ext_resource type="PackedScene" uid="uid://lfid8mliiemr" path="res://assets/staticMeshesObjects/asScenes/SceneFilingCabinetColli.tscn" id="17_cotwa"]
+[ext_resource type="PackedScene" uid="uid://bdw6blbq7vniq" path="res://assets/staticMeshesObjects/asScenes/SceneServerWallColli.tscn" id="18_o8x5s"]
 
 [sub_resource type="GDScript" id="GDScript_8d8bx"]
 script/source = "extends CenterContainer
@@ -7154,7 +7157,61 @@ size = 25.324
 [node name="population" type="Node3D" parent="."]
 
 [node name="Node3D" parent="population" instance=ExtResource("15_d8rjv")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.18754, 0, 5.85752)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.7464, 0.246857, 6.88269)
+
+[node name="Node3D2" parent="population" instance=ExtResource("15_d8rjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.87908, 0.246857, 5.70485)
+
+[node name="Node3D3" parent="population" instance=ExtResource("15_d8rjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.59559, 0.246857, 1.64356)
+
+[node name="Node3D4" parent="population" instance=ExtResource("15_d8rjv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.22352, 0.246857, -0.102848)
+
+[node name="Node3D8" parent="population" instance=ExtResource("15_d8rjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2688, 0.246857, -2.83349)
+
+[node name="Node3D9" parent="population" instance=ExtResource("15_d8rjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.54217, 0.246857, -3.64131)
+
+[node name="ScenePrinterOvenColli" parent="population" instance=ExtResource("16_akn05")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.53627, 0.101442, 2.16742)
+
+[node name="ScenePrinterOvenColli2" parent="population" instance=ExtResource("16_akn05")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.24395, 0.16455, -1.8586)
+
+[node name="ScenePrinterOvenColli3" parent="population" instance=ExtResource("16_akn05")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.10927, 0.227862, 4.99426)
+
+[node name="SceneFilingCabinetColli" parent="population" instance=ExtResource("17_cotwa")]
+transform = Transform3D(-0.461749, 0, 0.887011, 0, 1, 0, -0.887011, 0, -0.461749, -3.1853, 0.174636, 7.63641)
+
+[node name="SceneFilingCabinetColli2" parent="population" instance=ExtResource("17_cotwa")]
+transform = Transform3D(-0.461749, 0, 0.887011, 0, 1, 0, -0.887011, 0, -0.461749, -4.2777, 0.174636, 8.97769)
+
+[node name="SceneFilingCabinetColli3" parent="population" instance=ExtResource("17_cotwa")]
+transform = Transform3D(0.382683, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382683, -6.69481, 0.174636, 1.70879)
+
+[node name="SceneFilingCabinetColli4" parent="population" instance=ExtResource("17_cotwa")]
+transform = Transform3D(0.981627, 0, 0.190809, 0, 1, 0, -0.190809, 0, 0.981627, -0.757424, 0.174636, -3.11782)
+
+[node name="SceneFilingCabinetColli5" parent="population" instance=ExtResource("17_cotwa")]
+transform = Transform3D(0.939692, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939692, 2.20071, -0.925513, -2.80833)
+
+[node name="Node3D5" parent="population" instance=ExtResource("18_o8x5s")]
+transform = Transform3D(0.165048, 0, 0.986286, 0, 1, 0, -0.986286, 0, 0.165048, -9.53013, 0.221641, 0.545421)
+
+[node name="Node3D6" parent="population" instance=ExtResource("18_o8x5s")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.63303, 0.221641, 2.04919)
+
+[node name="Node3D11" parent="population" instance=ExtResource("18_o8x5s")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.20144, 0.251847, -7.36496)
+
+[node name="Node3D10" parent="population" instance=ExtResource("18_o8x5s")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.3712, 0.221641, -2.15598)
+
+[node name="Node3D7" parent="population" instance=ExtResource("18_o8x5s")]
+transform = Transform3D(0.139173, 0, 0.990268, 0, 1, 0, -0.990268, 0, 0.139173, -9.55064, -0.348844, 4.00171)
 
 [connection signal="die" from="player" to="death" method="_on_player_die"]
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
