@@ -6789,6 +6789,19 @@ use_collision = true
 size = Vector3(20.1669, 0.001, 18.901)
 material = SubResource("StandardMaterial3D_e776h")
 
+[node name="floor2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22179, 0)
+visible = false
+use_collision = true
+size = Vector3(20.1669, 0.001, 18.901)
+material = SubResource("StandardMaterial3D_e776h")
+
+[node name="ceiling" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.37872, 0)
+use_collision = true
+size = Vector3(20.1669, 0.001, 18.901)
+material = SubResource("StandardMaterial3D_e776h")
+
 [node name="terminals" type="Node3D" parent="."]
 transform = Transform3D(1, 1.05879e-22, 0, 9.63259e-34, 1, 0, 0, 0, 1, 0, 0, 0)
 
