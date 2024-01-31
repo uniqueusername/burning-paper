@@ -6798,6 +6798,7 @@ material = SubResource("StandardMaterial3D_e776h")
 
 [node name="ceiling" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.37872, 0)
+visible = false
 use_collision = true
 size = Vector3(20.1669, 0.001, 18.901)
 material = SubResource("StandardMaterial3D_e776h")
@@ -7221,7 +7222,7 @@ transform = Transform3D(-0.891007, 0, -0.453991, 0, 1, 0, 0.453991, 0, -0.891007
 transform = Transform3D(-0.891007, 0, -0.453991, 0, 1, 0, 0.453991, 0, -0.891007, 1.40914, 0.221213, -6.45071)
 
 [node name="SceneFilingCabinetColli7" parent="population" instance=ExtResource("17_cotwa")]
-transform = Transform3D(0.989016, 0, -0.147809, 0, 1, 0, 0.147809, 0, 0.989016, 9.08108, 0.230621, -1.20496)
+transform = Transform3D(0.989016, 0, -0.147809, 0, 1, 0, 0.147809, 0, 0.989016, 8.67286, 0.230621, -1.273)
 
 [node name="SceneFilingCabinetColli2" parent="population" instance=ExtResource("17_cotwa")]
 transform = Transform3D(-0.0382134, 0.838058, -0.544241, 0.99927, 0.0320484, -0.0208125, -2.38069e-08, -0.544639, -0.838671, -3.6583, 0.494532, 8.51197)
