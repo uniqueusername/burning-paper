@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=3 uid="uid://0xwiu8ojvx0l"]
+[gd_scene load_steps=100 format=3 uid="uid://0xwiu8ojvx0l"]
 
 [ext_resource type="PackedScene" uid="uid://b2b0kp0wya7bg" path="res://objects/terminal/terminal.tscn" id="1_npg4p"]
 [ext_resource type="PackedScene" uid="uid://cycfgh6uhnl1h" path="res://objects/player/player.tscn" id="2_jdb5k"]
@@ -18,6 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://cwxuljr8qvivr" path="res://assets/staticMeshesObjects/asScenes/ScenePrinterOvenColli.tscn" id="16_akn05"]
 [ext_resource type="PackedScene" uid="uid://lfid8mliiemr" path="res://assets/staticMeshesObjects/asScenes/SceneFilingCabinetColli.tscn" id="17_cotwa"]
 [ext_resource type="PackedScene" uid="uid://bdw6blbq7vniq" path="res://assets/staticMeshesObjects/asScenes/SceneServerWallColli.tscn" id="18_o8x5s"]
+
+[sub_resource type="GDScript" id="GDScript_24u86"]
+script/source = "extends CenterContainer
+
+func _on_terminal_manager_win():
+	visible = true	
+"
 
 [sub_resource type="GDScript" id="GDScript_8d8bx"]
 script/source = "extends CenterContainer
@@ -74,7 +81,7 @@ emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b5k2c"]
-size = Vector3(3.59484, 3, 2.09007)
+size = Vector3(3.59484, 3, 3.34777)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6w4sh"]
 resource_local_to_scene = true
@@ -104,7 +111,10 @@ emission = Color(1, 0, 0, 1)
 emission_energy_multiplier = 4.54
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_54fsh"]
-size = Vector3(3.99661, 3, 1.83159)
+size = Vector3(3.99661, 3, 3.57167)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kcn37"]
+size = Vector3(1.98279, 1.5, 3)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yfrso"]
 direction = Vector3(2.08165e-12, 10, 2.08165e-12)
@@ -6764,6 +6774,25 @@ size = Vector3(1.05957, 3, 1.34607)
 
 [node name="world" type="Node3D"]
 
+[node name="win" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_24u86")
+
+[node name="Label" type="Label" parent="win"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 108
+text = "i thought i noticed a few
+discrepencies...
+(you win!!!)
+(press r to restart)"
+horizontal_alignment = 1
+
 [node name="death" type="CenterContainer" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -6809,7 +6838,7 @@ material = SubResource("StandardMaterial3D_e776h")
 transform = Transform3D(1, 1.05879e-22, 0, 9.63259e-34, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="terminal" parent="terminals" instance=ExtResource("1_npg4p")]
-transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -9.34067, 1.29949, -8.80825)
+transform = Transform3D(1, -4.96115e-11, -7.27596e-12, -9.09773e-12, 1, -7.27596e-12, 0, 1.45519e-11, 1, -6.4616, 1.29949, -5.97381)
 material = SubResource("StandardMaterial3D_47g1u")
 
 [node name="Area3D2" type="Area3D" parent="terminals/terminal"]
@@ -6831,7 +6860,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal2/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 2.71644e-08, -8.61799e-43, 1, 2.29252e-42, -2.25595e-08, -2.39975e-29, 1, 0.302388, 0, 4.53379)
+transform = Transform3D(1, 1.05879e-22, 2.71644e-08, -8.61799e-43, 1, 2.29252e-42, -2.25595e-08, -2.39975e-29, 1, 4.18293, 0, 17.7562)
 shape = SubResource("BoxShape3D_b5k2c")
 
 [node name="terminal3" parent="terminals" instance=ExtResource("1_npg4p")]
@@ -6870,7 +6899,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal5/Area3D2"]
-transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, 0.398671, 0, -0.98601)
+transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, 0.398671, 0, -1.85605)
 shape = SubResource("BoxShape3D_54fsh")
 
 [node name="Area3D3" type="Area3D" parent="terminals/terminal5"]
@@ -6879,8 +6908,8 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="terminals/terminal5/Area3D3"]
-transform = Transform3D(1, 1.05879e-22, 0, 9.96183e-42, 1, 0, 1.36914e-30, 0, 1, 0.224897, 0.000244141, -0.622097)
-shape = SubResource("BoxShape3D_54fsh")
+transform = Transform3D(0.99996, 0.00891851, -1.29782e-13, -0.00891851, 0.99996, 5.7853e-16, 1.29781e-13, 5.7853e-16, 1, -0.88017, 0.0132849, -1.38092)
+shape = SubResource("BoxShape3D_kcn37")
 
 [node name="player" parent="." instance=ExtResource("2_jdb5k")]
 unique_name_in_owner = true
@@ -6912,6 +6941,7 @@ draw_pass_1 = SubResource("BoxMesh_r1tij")
 script = ExtResource("5_6iefq")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+visible = false
 navigation_mesh = SubResource("NavigationMesh_ichjo")
 
 [node name="walls" parent="NavigationRegion3D" instance=ExtResource("6_jiq8n")]
@@ -7266,7 +7296,6 @@ max_distance = 20.0
 transform = Transform3D(0.999934, 0.0115004, -0.000652636, 0, 0.0566579, 0.998394, 0.0115189, -0.998327, 0.0566541, -0.592796, 21.5331, 0.127188)
 environment = SubResource("Environment_ip753")
 projection = 1
-current = true
 fov = 67.0
 size = 25.324
 
@@ -7358,6 +7387,7 @@ transform = Transform3D(0.139173, 0, 0.990268, 0, 1, 0, -0.990268, 0, 0.139173, 
 
 [connection signal="die" from="player" to="death" method="_on_player_die"]
 [connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
+[connection signal="win" from="terminal_manager" to="win" method="_on_terminal_manager_win"]
 [connection signal="end_tracking" from="enemy_guy" to="enemy_guy/vision_cone" method="_on_end_tracking"]
 [connection signal="retarget" from="enemy_guy/vision_cone" to="enemy_guy" method="_on_vision_cone_retarget"]
 [connection signal="timeout" from="enemy_guy/start_movement" to="enemy_guy" method="_on_timer_timeout"]

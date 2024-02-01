@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 signal die
 
-const WALK = 2.0
+const WALK = 3.0
 const SPRINT = 10.0
 var speed = WALK
 const JUMP_VELOCITY = 4.5

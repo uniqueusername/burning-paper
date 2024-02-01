@@ -11,7 +11,7 @@ var at_terminal: bool = false
 var terminals_last_nearby: int = 0
 
 #prev.: val: 2
-var movement_speed: float = 2.5
+var movement_speed: float = 3.2
 var movement_delta: float
 var path_point_margin: float = 0.5
 
