@@ -6808,7 +6808,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 108
 text = "you died
 repent...
-(R to restart)"
+(R to repent)"
 horizontal_alignment = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -7386,8 +7386,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6.371
 transform = Transform3D(0.139173, 0, 0.990268, 0, 1, 0, -0.990268, 0, 0.139173, -9.55064, -0.348844, 4.00171)
 
 [connection signal="die" from="player" to="death" method="_on_player_die"]
-[connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
 [connection signal="win" from="terminal_manager" to="win" method="_on_terminal_manager_win"]
+[connection signal="win" from="terminal_manager" to="GPUParticles3D" method="_on_win"]
 [connection signal="end_tracking" from="enemy_guy" to="enemy_guy/vision_cone" method="_on_end_tracking"]
 [connection signal="retarget" from="enemy_guy/vision_cone" to="enemy_guy" method="_on_vision_cone_retarget"]
 [connection signal="timeout" from="enemy_guy/start_movement" to="enemy_guy" method="_on_timer_timeout"]
